@@ -1,0 +1,1236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions name="PsmConfigurationService"
+	targetNamespace="http://tempuri.org/"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://tempuri.org/" xmlns:jaxws="https://jakarta.ee/xml/ns/jaxws"
+	xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl">
+	<wsdl:types>
+		<xs:schema elementFormDefault="qualified"
+			targetNamespace="http://tempuri.org/"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema">
+			<xs:import
+				namespace="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+			<xs:import
+				namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+			<xs:element name="StartConfiguration">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="configurableId"
+							nillable="true" type="xs:string" />
+						<xs:element minOccurs="0" name="database"
+							nillable="true" type="xs:string" />
+						<xs:element minOccurs="0" name="language"
+							nillable="true" type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="StartConfigurationResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+							name="StartConfigurationResult" nillable="true"
+							type="q1:PsmConfigurationSession"
+							xmlns:q1="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="StartConfigurationWithSpecificBehaviour">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="configurableId"
+							nillable="true" type="xs:string" />
+						<xs:element minOccurs="0" name="database"
+							nillable="true" type="xs:string" />
+						<xs:element minOccurs="0" name="language"
+							nillable="true" type="xs:string" />
+						<xs:element minOccurs="0" name="layoutBehaviourType"
+							type="q2:PsmLayoutBehaviourTypes"
+							xmlns:q2="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element
+				name="StartConfigurationWithSpecificBehaviourResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+							name="StartConfigurationWithSpecificBehaviourResult"
+							nillable="true" type="q3:PsmConfigurationSession"
+							xmlns:q3="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="StartConfigurationPermissiveMode">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="configurableId"
+							nillable="true" type="xs:string" />
+						<xs:element minOccurs="0" name="database"
+							nillable="true" type="xs:string" />
+						<xs:element minOccurs="0" name="language"
+							nillable="true" type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element
+				name="StartConfigurationPermissiveModeResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+							name="StartConfigurationPermissiveModeResult" nillable="true"
+							type="q4:PsmConfigurationSession"
+							xmlns:q4="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element
+				name="StartConfigurationPermissiveModeWithSpecificBehaviour">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="configurableId"
+							nillable="true" type="xs:string" />
+						<xs:element minOccurs="0" name="database"
+							nillable="true" type="xs:string" />
+						<xs:element minOccurs="0" name="language"
+							nillable="true" type="xs:string" />
+						<xs:element minOccurs="0" name="layoutBehaviourType"
+							type="q5:PsmLayoutBehaviourTypes"
+							xmlns:q5="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element
+				name="StartConfigurationPermissiveModeWithSpecificBehaviourResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+							name="StartConfigurationPermissiveModeWithSpecificBehaviourResult"
+							nillable="true" type="q6:PsmConfigurationSession"
+							xmlns:q6="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="StartConfigurationFromReference">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="configurableId"
+							nillable="true" type="xs:string" />
+						<xs:element minOccurs="0" name="reference"
+							nillable="true" type="xs:string" />
+						<xs:element minOccurs="0" name="database"
+							nillable="true" type="xs:string" />
+						<xs:element minOccurs="0" name="language"
+							nillable="true" type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="StartConfigurationFromReferenceResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+							name="StartConfigurationFromReferenceResult" nillable="true"
+							type="q7:PsmConfigurationSession"
+							xmlns:q7="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element
+				name="StartConfigurationFromReferenceWithSpecificBehaviour">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="configurableId"
+							nillable="true" type="xs:string" />
+						<xs:element minOccurs="0" name="reference"
+							nillable="true" type="xs:string" />
+						<xs:element minOccurs="0" name="database"
+							nillable="true" type="xs:string" />
+						<xs:element minOccurs="0" name="language"
+							nillable="true" type="xs:string" />
+						<xs:element minOccurs="0" name="layoutBehaviourType"
+							type="q8:PsmLayoutBehaviourTypes"
+							xmlns:q8="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element
+				name="StartConfigurationFromReferenceWithSpecificBehaviourResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+							name="StartConfigurationFromReferenceWithSpecificBehaviourResult"
+							nillable="true" type="q9:PsmConfigurationSession"
+							xmlns:q9="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element
+				name="StartConfigurationFromReferencePermissiveMode">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="configurableId"
+							nillable="true" type="xs:string" />
+						<xs:element minOccurs="0" name="reference"
+							nillable="true" type="xs:string" />
+						<xs:element minOccurs="0" name="database"
+							nillable="true" type="xs:string" />
+						<xs:element minOccurs="0" name="language"
+							nillable="true" type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element
+				name="StartConfigurationFromReferencePermissiveModeResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+							name="StartConfigurationFromReferencePermissiveModeResult"
+							nillable="true" type="q10:PsmConfigurationSession"
+							xmlns:q10="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element
+				name="StartConfigurationFromReferencePermissiveModeWithSpecificBehaviour">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="configurableId"
+							nillable="true" type="xs:string" />
+						<xs:element minOccurs="0" name="reference"
+							nillable="true" type="xs:string" />
+						<xs:element minOccurs="0" name="database"
+							nillable="true" type="xs:string" />
+						<xs:element minOccurs="0" name="language"
+							nillable="true" type="xs:string" />
+						<xs:element minOccurs="0" name="layoutBehaviourType"
+							type="q11:PsmLayoutBehaviourTypes"
+							xmlns:q11="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element
+				name="StartConfigurationFromReferencePermissiveModeWithSpecificBehaviourResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+							name="StartConfigurationFromReferencePermissiveModeWithSpecificBehaviourResult"
+							nillable="true" type="q12:PsmConfigurationSession"
+							xmlns:q12="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="SetCharacteristicValues">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="configurationSessionId"
+							type="xs:int" />
+						<xs:element minOccurs="0" name="characteristicId"
+							nillable="true" type="xs:string" />
+						<xs:element minOccurs="0" name="values" nillable="true"
+							type="q13:ArrayOfstring"
+							xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="SetCharacteristicValuesResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0"
+							name="SetCharacteristicValuesResult" nillable="true"
+							type="q14:PsmConfigurationSession"
+							xmlns:q14="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="GetConfiguration">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="configurationSessionId"
+							type="xs:int" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="GetConfigurationResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="GetConfigurationResult"
+							nillable="true" type="q15:PsmConfigurationSession"
+							xmlns:q15="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="DeleteConfiguration">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="configurationSessionId"
+							type="xs:int" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="DeleteConfigurationResponse">
+				<xs:complexType>
+					<xs:sequence />
+				</xs:complexType>
+			</xs:element>
+		</xs:schema>
+		<xs:schema attributeFormDefault="qualified"
+			elementFormDefault="qualified"
+			targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+			<xs:element name="anyType" nillable="true"
+				type="xs:anyType" />
+			<xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+			<xs:element name="base64Binary" nillable="true"
+				type="xs:base64Binary" />
+			<xs:element name="boolean" nillable="true"
+				type="xs:boolean" />
+			<xs:element name="byte" nillable="true" type="xs:byte" />
+			<xs:element name="dateTime" nillable="true"
+				type="xs:dateTime" />
+			<xs:element name="decimal" nillable="true"
+				type="xs:decimal" />
+			<xs:element name="double" nillable="true" type="xs:double" />
+			<xs:element name="float" nillable="true" type="xs:float" />
+			<xs:element name="int" nillable="true" type="xs:int" />
+			<xs:element name="long" nillable="true" type="xs:long" />
+			<xs:element name="QName" nillable="true" type="xs:QName" />
+			<xs:element name="short" nillable="true" type="xs:short" />
+			<xs:element name="string" nillable="true" type="xs:string" />
+			<xs:element name="unsignedByte" nillable="true"
+				type="xs:unsignedByte" />
+			<xs:element name="unsignedInt" nillable="true"
+				type="xs:unsignedInt" />
+			<xs:element name="unsignedLong" nillable="true"
+				type="xs:unsignedLong" />
+			<xs:element name="unsignedShort" nillable="true"
+				type="xs:unsignedShort" />
+			<xs:element name="char" nillable="true" type="tns:char" />
+			<xs:simpleType name="char">
+				<xs:restriction base="xs:int" />
+			</xs:simpleType>
+			<xs:element name="duration" nillable="true"
+				type="tns:duration" />
+			<xs:simpleType name="duration">
+				<xs:restriction base="xs:duration">
+					<xs:pattern
+						value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+					<xs:minInclusive
+						value="-P10675199DT2H48M5.4775808S" />
+					<xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:element name="guid" nillable="true" type="tns:guid" />
+			<xs:simpleType name="guid">
+				<xs:restriction base="xs:string">
+					<xs:pattern
+						value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:attribute name="FactoryType" type="xs:QName" />
+			<xs:attribute name="Id" type="xs:ID" />
+			<xs:attribute name="Ref" type="xs:IDREF" />
+		</xs:schema>
+		<xs:schema elementFormDefault="qualified"
+			targetNamespace="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns:tns="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService">
+			<xs:complexType name="PsmConfigurationSession">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="CharacteristicGroups"
+						nillable="true" type="tns:ArrayOfPsmCharacteristicGroup" />
+					<xs:element minOccurs="0" name="ConfigurableId"
+						nillable="true" type="xs:string" />
+					<xs:element minOccurs="0" name="Database"
+						nillable="true" type="xs:string" />
+					<xs:element minOccurs="0" name="IsConfigured"
+						type="xs:boolean" />
+					<xs:element minOccurs="0" name="IsPermissiveMode"
+						type="xs:boolean" />
+					<xs:element minOccurs="0" name="Language"
+						nillable="true" type="xs:string" />
+					<xs:element minOccurs="0" name="RequestedLanguage"
+						nillable="true" type="xs:string" />
+					<xs:element minOccurs="0" name="SelectedMacroRef"
+						nillable="true" type="xs:string" />
+					<xs:element minOccurs="0" name="SelectedSubReferences"
+						nillable="true" type="tns:ArrayOfPsmSubReference" />
+					<xs:element minOccurs="0" name="SessionId" type="xs:int" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="PsmConfigurationSession" nillable="true"
+				type="tns:PsmConfigurationSession" />
+			<xs:complexType name="ArrayOfPsmCharacteristicGroup">
+				<xs:sequence>
+					<xs:element minOccurs="0" maxOccurs="unbounded"
+						name="PsmCharacteristicGroup" nillable="true"
+						type="tns:PsmCharacteristicGroup" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="ArrayOfPsmCharacteristicGroup"
+				nillable="true" type="tns:ArrayOfPsmCharacteristicGroup" />
+			<xs:complexType name="PsmCharacteristicGroup">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="Characteristics"
+						nillable="true" type="tns:ArrayOfPsmCharacteristic" />
+					<xs:element minOccurs="0" name="Id" nillable="true"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="Name" nillable="true"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="Visible"
+						type="xs:boolean" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="PsmCharacteristicGroup" nillable="true"
+				type="tns:PsmCharacteristicGroup" />
+			<xs:complexType name="ArrayOfPsmCharacteristic">
+				<xs:sequence>
+					<xs:element minOccurs="0" maxOccurs="unbounded"
+						name="PsmCharacteristic" nillable="true"
+						type="tns:PsmCharacteristic" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="ArrayOfPsmCharacteristic"
+				nillable="true" type="tns:ArrayOfPsmCharacteristic" />
+			<xs:complexType name="PsmCharacteristic">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="Description"
+						nillable="true" type="xs:string" />
+					<xs:element minOccurs="0" name="Id" nillable="true"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="IsConflicting"
+						type="xs:boolean" />
+					<xs:element minOccurs="0" name="IsMultivalued"
+						type="xs:boolean" />
+					<xs:element minOccurs="0" name="IsReadOnly"
+						type="xs:boolean" />
+					<xs:element minOccurs="0" name="IsRequired"
+						type="xs:boolean" />
+					<xs:element minOccurs="0" name="IsVisible"
+						type="xs:boolean" />
+					<xs:element minOccurs="0" name="Name" nillable="true"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="Values" nillable="true"
+						type="tns:ArrayOfPsmCharacteristicValue" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="PsmCharacteristic" nillable="true"
+				type="tns:PsmCharacteristic" />
+			<xs:complexType name="ArrayOfPsmCharacteristicValue">
+				<xs:sequence>
+					<xs:element minOccurs="0" maxOccurs="unbounded"
+						name="PsmCharacteristicValue" nillable="true"
+						type="tns:PsmCharacteristicValue" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="ArrayOfPsmCharacteristicValue"
+				nillable="true" type="tns:ArrayOfPsmCharacteristicValue" />
+			<xs:complexType name="PsmCharacteristicValue">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="Id" nillable="true"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="IsApplyingDefault"
+						type="xs:boolean" />
+					<xs:element minOccurs="0"
+						name="IsCompatibleWithCurrentValues" type="xs:boolean" />
+					<xs:element minOccurs="0" name="IsDefault"
+						type="xs:boolean" />
+					<xs:element minOccurs="0" name="IsReadOnly"
+						type="xs:boolean" />
+					<xs:element minOccurs="0" name="IsSelected"
+						type="xs:boolean" />
+					<xs:element minOccurs="0" name="IsValid"
+						type="xs:boolean" />
+					<xs:element minOccurs="0" name="Name" nillable="true"
+						type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="PsmCharacteristicValue" nillable="true"
+				type="tns:PsmCharacteristicValue" />
+			<xs:complexType name="ArrayOfPsmSubReference">
+				<xs:sequence>
+					<xs:element minOccurs="0" maxOccurs="unbounded"
+						name="PsmSubReference" nillable="true" type="tns:PsmSubReference" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="ArrayOfPsmSubReference" nillable="true"
+				type="tns:ArrayOfPsmSubReference" />
+			<xs:complexType name="PsmSubReference">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="Quantity" type="xs:int" />
+					<xs:element minOccurs="0" name="Reference"
+						nillable="true" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="PsmSubReference" nillable="true"
+				type="tns:PsmSubReference" />
+			<xs:complexType name="InvalidParameterFault">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="Details" nillable="true"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="FaultyParameter"
+						nillable="true" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="InvalidParameterFault" nillable="true"
+				type="tns:InvalidParameterFault" />
+			<xs:complexType name="DataFormatterFault">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="Details" nillable="true"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="Issue" nillable="true"
+						type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="DataFormatterFault" nillable="true"
+				type="tns:DataFormatterFault" />
+			<xs:complexType name="ConfigurationEngineFault">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="Details" nillable="true"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="Issue" nillable="true"
+						type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="ConfigurationEngineFault"
+				nillable="true" type="tns:ConfigurationEngineFault" />
+			<xs:simpleType name="PsmLayoutBehaviourTypes">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="StaticLayoutBehaviour" />
+					<xs:enumeration value="DynamicLayoutBehavior" />
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:element name="PsmLayoutBehaviourTypes" nillable="true"
+				type="tns:PsmLayoutBehaviourTypes" />
+		</xs:schema>
+		<xs:schema elementFormDefault="qualified"
+			targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+			<xs:complexType name="ArrayOfstring">
+				<xs:sequence>
+					<xs:element minOccurs="0" maxOccurs="unbounded"
+						name="string" nillable="true" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="ArrayOfstring" nillable="true"
+				type="tns:ArrayOfstring" />
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message
+		name="IPsmConfigurationService_StartConfiguration_InputMessage">
+		<wsdl:part name="parameters"
+			element="tns:StartConfiguration" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_StartConfiguration_OutputMessage">
+		<wsdl:part name="parameters"
+			element="tns:StartConfigurationResponse" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_StartConfiguration_InvalidParameterFaultFault_FaultMessage">
+		<wsdl:part name="detail" element="q1:InvalidParameterFault"
+			xmlns:q1="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_StartConfiguration_DataFormatterFaultFault_FaultMessage">
+		<wsdl:part name="detail" element="q2:DataFormatterFault"
+			xmlns:q2="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_StartConfiguration_ConfigurationEngineFaultFault_FaultMessage">
+		<wsdl:part name="detail"
+			element="q3:ConfigurationEngineFault"
+			xmlns:q3="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_StartConfigurationWithSpecificBehaviour_InputMessage">
+		<wsdl:part name="parameters"
+			element="tns:StartConfigurationWithSpecificBehaviour" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_StartConfigurationWithSpecificBehaviour_OutputMessage">
+		<wsdl:part name="parameters"
+			element="tns:StartConfigurationWithSpecificBehaviourResponse" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_StartConfigurationWithSpecificBehaviour_ConfigurationEngineFaultFault_FaultMessage">
+		<wsdl:part name="detail"
+			element="q4:ConfigurationEngineFault"
+			xmlns:q4="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_StartConfigurationWithSpecificBehaviour_DataFormatterFaultFault_FaultMessage">
+		<wsdl:part name="detail" element="q5:DataFormatterFault"
+			xmlns:q5="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_StartConfigurationWithSpecificBehaviour_InvalidParameterFaultFault_FaultMessage">
+		<wsdl:part name="detail" element="q6:InvalidParameterFault"
+			xmlns:q6="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_StartConfigurationPermissiveMode_InputMessage">
+		<wsdl:part name="parameters"
+			element="tns:StartConfigurationPermissiveMode" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_StartConfigurationPermissiveMode_OutputMessage">
+		<wsdl:part name="parameters"
+			element="tns:StartConfigurationPermissiveModeResponse" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_StartConfigurationPermissiveMode_DataFormatterFaultFault_FaultMessage">
+		<wsdl:part name="detail" element="q7:DataFormatterFault"
+			xmlns:q7="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_StartConfigurationPermissiveMode_ConfigurationEngineFaultFault_FaultMessage">
+		<wsdl:part name="detail"
+			element="q8:ConfigurationEngineFault"
+			xmlns:q8="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_StartConfigurationPermissiveMode_InvalidParameterFaultFault_FaultMessage">
+		<wsdl:part name="detail" element="q9:InvalidParameterFault"
+			xmlns:q9="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_StartConfigurationPermissiveModeWithSpecificBehaviour_InputMessage">
+		<wsdl:part name="parameters"
+			element="tns:StartConfigurationPermissiveModeWithSpecificBehaviour" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_StartConfigurationPermissiveModeWithSpecificBehaviour_OutputMessage">
+		<wsdl:part name="parameters"
+			element="tns:StartConfigurationPermissiveModeWithSpecificBehaviourResponse" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_StartConfigurationPermissiveModeWithSpecificBehaviour_DataFormatterFaultFault_FaultMessage">
+		<wsdl:part name="detail" element="q10:DataFormatterFault"
+			xmlns:q10="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_StartConfigurationPermissiveModeWithSpecificBehaviour_ConfigurationEngineFaultFault_FaultMessage">
+		<wsdl:part name="detail"
+			element="q11:ConfigurationEngineFault"
+			xmlns:q11="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_StartConfigurationPermissiveModeWithSpecificBehaviour_InvalidParameterFaultFault_FaultMessage">
+		<wsdl:part name="detail" element="q12:InvalidParameterFault"
+			xmlns:q12="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_StartConfigurationFromReference_InputMessage">
+		<wsdl:part name="parameters"
+			element="tns:StartConfigurationFromReference" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_StartConfigurationFromReference_OutputMessage">
+		<wsdl:part name="parameters"
+			element="tns:StartConfigurationFromReferenceResponse" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_StartConfigurationFromReference_DataFormatterFaultFault_FaultMessage">
+		<wsdl:part name="detail" element="q13:DataFormatterFault"
+			xmlns:q13="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_StartConfigurationFromReference_InvalidParameterFaultFault_FaultMessage">
+		<wsdl:part name="detail" element="q14:InvalidParameterFault"
+			xmlns:q14="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_StartConfigurationFromReference_ConfigurationEngineFaultFault_FaultMessage">
+		<wsdl:part name="detail"
+			element="q15:ConfigurationEngineFault"
+			xmlns:q15="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_StartConfigurationFromReferenceWithSpecificBehaviour_InputMessage">
+		<wsdl:part name="parameters"
+			element="tns:StartConfigurationFromReferenceWithSpecificBehaviour" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_StartConfigurationFromReferenceWithSpecificBehaviour_OutputMessage">
+		<wsdl:part name="parameters"
+			element="tns:StartConfigurationFromReferenceWithSpecificBehaviourResponse" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_StartConfigurationFromReferenceWithSpecificBehaviour_InvalidParameterFaultFault_FaultMessage">
+		<wsdl:part name="detail" element="q16:InvalidParameterFault"
+			xmlns:q16="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_StartConfigurationFromReferenceWithSpecificBehaviour_ConfigurationEngineFaultFault_FaultMessage">
+		<wsdl:part name="detail"
+			element="q17:ConfigurationEngineFault"
+			xmlns:q17="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_StartConfigurationFromReferenceWithSpecificBehaviour_DataFormatterFaultFault_FaultMessage">
+		<wsdl:part name="detail" element="q18:DataFormatterFault"
+			xmlns:q18="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_StartConfigurationFromReferencePermissiveMode_InputMessage">
+		<wsdl:part name="parameters"
+			element="tns:StartConfigurationFromReferencePermissiveMode" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_StartConfigurationFromReferencePermissiveMode_OutputMessage">
+		<wsdl:part name="parameters"
+			element="tns:StartConfigurationFromReferencePermissiveModeResponse" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_StartConfigurationFromReferencePermissiveMode_InvalidParameterFaultFault_FaultMessage">
+		<wsdl:part name="detail" element="q19:InvalidParameterFault"
+			xmlns:q19="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_StartConfigurationFromReferencePermissiveMode_ConfigurationEngineFaultFault_FaultMessage">
+		<wsdl:part name="detail"
+			element="q20:ConfigurationEngineFault"
+			xmlns:q20="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_StartConfigurationFromReferencePermissiveMode_DataFormatterFaultFault_FaultMessage">
+		<wsdl:part name="detail" element="q21:DataFormatterFault"
+			xmlns:q21="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_StartConfigurationFromReferencePermissiveModeWithSpecificBehaviour_InputMessage">
+		<wsdl:part name="parameters"
+			element="tns:StartConfigurationFromReferencePermissiveModeWithSpecificBehaviour" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_StartConfigurationFromReferencePermissiveModeWithSpecificBehaviour_OutputMessage">
+		<wsdl:part name="parameters"
+			element="tns:StartConfigurationFromReferencePermissiveModeWithSpecificBehaviourResponse" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_StartConfigurationFromReferencePermissiveModeWithSpecificBehaviour_DataFormatterFaultFault_FaultMessage">
+		<wsdl:part name="detail" element="q22:DataFormatterFault"
+			xmlns:q22="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_StartConfigurationFromReferencePermissiveModeWithSpecificBehaviour_InvalidParameterFaultFault_FaultMessage">
+		<wsdl:part name="detail" element="q23:InvalidParameterFault"
+			xmlns:q23="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_StartConfigurationFromReferencePermissiveModeWithSpecificBehaviour_ConfigurationEngineFaultFault_FaultMessage">
+		<wsdl:part name="detail"
+			element="q24:ConfigurationEngineFault"
+			xmlns:q24="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_SetCharacteristicValues_InputMessage">
+		<wsdl:part name="parameters"
+			element="tns:SetCharacteristicValues" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_SetCharacteristicValues_OutputMessage">
+		<wsdl:part name="parameters"
+			element="tns:SetCharacteristicValuesResponse" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_SetCharacteristicValues_DataFormatterFaultFault_FaultMessage">
+		<wsdl:part name="detail" element="q25:DataFormatterFault"
+			xmlns:q25="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_SetCharacteristicValues_InvalidParameterFaultFault_FaultMessage">
+		<wsdl:part name="detail" element="q26:InvalidParameterFault"
+			xmlns:q26="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_SetCharacteristicValues_ConfigurationEngineFaultFault_FaultMessage">
+		<wsdl:part name="detail"
+			element="q27:ConfigurationEngineFault"
+			xmlns:q27="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_GetConfiguration_InputMessage">
+		<wsdl:part name="parameters" element="tns:GetConfiguration" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_GetConfiguration_OutputMessage">
+		<wsdl:part name="parameters"
+			element="tns:GetConfigurationResponse" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_GetConfiguration_DataFormatterFaultFault_FaultMessage">
+		<wsdl:part name="detail" element="q28:DataFormatterFault"
+			xmlns:q28="http://schemas.datacontract.org/2004/07/SchneiderElectric.CustomerSoftware.PACE.PsmWcfService" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_DeleteConfiguration_InputMessage">
+		<wsdl:part name="parameters"
+			element="tns:DeleteConfiguration" />
+	</wsdl:message>
+	<wsdl:message
+		name="IPsmConfigurationService_DeleteConfiguration_OutputMessage">
+		<wsdl:part name="parameters"
+			element="tns:DeleteConfigurationResponse" />
+	</wsdl:message>
+	<wsdl:portType name="IPsmConfigurationService">
+		<wsdl:operation name="StartConfiguration">
+			<wsdl:input
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/StartConfiguration"
+				message="tns:IPsmConfigurationService_StartConfiguration_InputMessage" />
+			<wsdl:output
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/StartConfigurationResponse"
+				message="tns:IPsmConfigurationService_StartConfiguration_OutputMessage" />
+			<wsdl:fault
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/StartConfigurationInvalidParameterFaultFault"
+				name="InvalidParameterFaultFault"
+				message="tns:IPsmConfigurationService_StartConfiguration_InvalidParameterFaultFault_FaultMessage" />
+			<wsdl:fault
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/StartConfigurationDataFormatterFaultFault"
+				name="DataFormatterFaultFault"
+				message="tns:IPsmConfigurationService_StartConfiguration_DataFormatterFaultFault_FaultMessage" />
+			<wsdl:fault
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/StartConfigurationConfigurationEngineFaultFault"
+				name="ConfigurationEngineFaultFault"
+				message="tns:IPsmConfigurationService_StartConfiguration_ConfigurationEngineFaultFault_FaultMessage" />
+		</wsdl:operation>
+		<wsdl:operation
+			name="StartConfigurationWithSpecificBehaviour">
+			<wsdl:input
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/StartConfigurationWithSpecificBehaviour"
+				message="tns:IPsmConfigurationService_StartConfigurationWithSpecificBehaviour_InputMessage" />
+			<wsdl:output
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/StartConfigurationWithSpecificBehaviourResponse"
+				message="tns:IPsmConfigurationService_StartConfigurationWithSpecificBehaviour_OutputMessage" />
+			<wsdl:fault
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/StartConfigurationWithSpecificBehaviourConfigurationEngineFaultFault"
+				name="ConfigurationEngineFaultFault"
+				message="tns:IPsmConfigurationService_StartConfigurationWithSpecificBehaviour_ConfigurationEngineFaultFault_FaultMessage" />
+			<wsdl:fault
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/StartConfigurationWithSpecificBehaviourDataFormatterFaultFault"
+				name="DataFormatterFaultFault"
+				message="tns:IPsmConfigurationService_StartConfigurationWithSpecificBehaviour_DataFormatterFaultFault_FaultMessage" />
+			<wsdl:fault
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/StartConfigurationWithSpecificBehaviourInvalidParameterFaultFault"
+				name="InvalidParameterFaultFault"
+				message="tns:IPsmConfigurationService_StartConfigurationWithSpecificBehaviour_InvalidParameterFaultFault_FaultMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="StartConfigurationPermissiveMode">
+			<wsdl:input
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/StartConfigurationPermissiveMode"
+				message="tns:IPsmConfigurationService_StartConfigurationPermissiveMode_InputMessage" />
+			<wsdl:output
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/StartConfigurationPermissiveModeResponse"
+				message="tns:IPsmConfigurationService_StartConfigurationPermissiveMode_OutputMessage" />
+			<wsdl:fault
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/StartConfigurationPermissiveModeDataFormatterFaultFault"
+				name="DataFormatterFaultFault"
+				message="tns:IPsmConfigurationService_StartConfigurationPermissiveMode_DataFormatterFaultFault_FaultMessage" />
+			<wsdl:fault
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/StartConfigurationPermissiveModeConfigurationEngineFaultFault"
+				name="ConfigurationEngineFaultFault"
+				message="tns:IPsmConfigurationService_StartConfigurationPermissiveMode_ConfigurationEngineFaultFault_FaultMessage" />
+			<wsdl:fault
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/StartConfigurationPermissiveModeInvalidParameterFaultFault"
+				name="InvalidParameterFaultFault"
+				message="tns:IPsmConfigurationService_StartConfigurationPermissiveMode_InvalidParameterFaultFault_FaultMessage" />
+		</wsdl:operation>
+		<wsdl:operation
+			name="StartConfigurationPermissiveModeWithSpecificBehaviour">
+			<wsdl:input
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/StartConfigurationPermissiveModeWithSpecificBehaviour"
+				message="tns:IPsmConfigurationService_StartConfigurationPermissiveModeWithSpecificBehaviour_InputMessage" />
+			<wsdl:output
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/StartConfigurationPermissiveModeWithSpecificBehaviourResponse"
+				message="tns:IPsmConfigurationService_StartConfigurationPermissiveModeWithSpecificBehaviour_OutputMessage" />
+			<wsdl:fault
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/StartConfigurationPermissiveModeWithSpecificBehaviourDataFormatterFaultFault"
+				name="DataFormatterFaultFault"
+				message="tns:IPsmConfigurationService_StartConfigurationPermissiveModeWithSpecificBehaviour_DataFormatterFaultFault_FaultMessage" />
+			<wsdl:fault
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/StartConfigurationPermissiveModeWithSpecificBehaviourConfigurationEngineFaultFault"
+				name="ConfigurationEngineFaultFault"
+				message="tns:IPsmConfigurationService_StartConfigurationPermissiveModeWithSpecificBehaviour_ConfigurationEngineFaultFault_FaultMessage" />
+			<wsdl:fault
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/StartConfigurationPermissiveModeWithSpecificBehaviourInvalidParameterFaultFault"
+				name="InvalidParameterFaultFault"
+				message="tns:IPsmConfigurationService_StartConfigurationPermissiveModeWithSpecificBehaviour_InvalidParameterFaultFault_FaultMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="StartConfigurationFromReference">
+			<wsdl:input
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/StartConfigurationFromReference"
+				message="tns:IPsmConfigurationService_StartConfigurationFromReference_InputMessage" />
+			<wsdl:output
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/StartConfigurationFromReferenceResponse"
+				message="tns:IPsmConfigurationService_StartConfigurationFromReference_OutputMessage" />
+			<wsdl:fault
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/StartConfigurationFromReferenceDataFormatterFaultFault"
+				name="DataFormatterFaultFault"
+				message="tns:IPsmConfigurationService_StartConfigurationFromReference_DataFormatterFaultFault_FaultMessage" />
+			<wsdl:fault
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/StartConfigurationFromReferenceInvalidParameterFaultFault"
+				name="InvalidParameterFaultFault"
+				message="tns:IPsmConfigurationService_StartConfigurationFromReference_InvalidParameterFaultFault_FaultMessage" />
+			<wsdl:fault
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/StartConfigurationFromReferenceConfigurationEngineFaultFault"
+				name="ConfigurationEngineFaultFault"
+				message="tns:IPsmConfigurationService_StartConfigurationFromReference_ConfigurationEngineFaultFault_FaultMessage" />
+		</wsdl:operation>
+		<wsdl:operation
+			name="StartConfigurationFromReferenceWithSpecificBehaviour">
+			<wsdl:input
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/StartConfigurationFromReferenceWithSpecificBehaviour"
+				message="tns:IPsmConfigurationService_StartConfigurationFromReferenceWithSpecificBehaviour_InputMessage" />
+			<wsdl:output
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/StartConfigurationFromReferenceWithSpecificBehaviourResponse"
+				message="tns:IPsmConfigurationService_StartConfigurationFromReferenceWithSpecificBehaviour_OutputMessage" />
+			<wsdl:fault
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/StartConfigurationFromReferenceWithSpecificBehaviourInvalidParameterFaultFault"
+				name="InvalidParameterFaultFault"
+				message="tns:IPsmConfigurationService_StartConfigurationFromReferenceWithSpecificBehaviour_InvalidParameterFaultFault_FaultMessage" />
+			<wsdl:fault
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/StartConfigurationFromReferenceWithSpecificBehaviourConfigurationEngineFaultFault"
+				name="ConfigurationEngineFaultFault"
+				message="tns:IPsmConfigurationService_StartConfigurationFromReferenceWithSpecificBehaviour_ConfigurationEngineFaultFault_FaultMessage" />
+			<wsdl:fault
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/StartConfigurationFromReferenceWithSpecificBehaviourDataFormatterFaultFault"
+				name="DataFormatterFaultFault"
+				message="tns:IPsmConfigurationService_StartConfigurationFromReferenceWithSpecificBehaviour_DataFormatterFaultFault_FaultMessage" />
+		</wsdl:operation>
+		<wsdl:operation
+			name="StartConfigurationFromReferencePermissiveMode">
+			<wsdl:input
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/StartConfigurationFromReferencePermissiveMode"
+				message="tns:IPsmConfigurationService_StartConfigurationFromReferencePermissiveMode_InputMessage" />
+			<wsdl:output
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/StartConfigurationFromReferencePermissiveModeResponse"
+				message="tns:IPsmConfigurationService_StartConfigurationFromReferencePermissiveMode_OutputMessage" />
+			<wsdl:fault
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/StartConfigurationFromReferencePermissiveModeInvalidParameterFaultFault"
+				name="InvalidParameterFaultFault"
+				message="tns:IPsmConfigurationService_StartConfigurationFromReferencePermissiveMode_InvalidParameterFaultFault_FaultMessage" />
+			<wsdl:fault
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/StartConfigurationFromReferencePermissiveModeConfigurationEngineFaultFault"
+				name="ConfigurationEngineFaultFault"
+				message="tns:IPsmConfigurationService_StartConfigurationFromReferencePermissiveMode_ConfigurationEngineFaultFault_FaultMessage" />
+			<wsdl:fault
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/StartConfigurationFromReferencePermissiveModeDataFormatterFaultFault"
+				name="DataFormatterFaultFault"
+				message="tns:IPsmConfigurationService_StartConfigurationFromReferencePermissiveMode_DataFormatterFaultFault_FaultMessage" />
+		</wsdl:operation>
+		<wsdl:operation
+			name="StartConfigurationFromReferencePermissiveModeWithSpecificBehaviour">
+			<wsdl:input
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/StartConfigurationFromReferencePermissiveModeWithSpecificBehaviour"
+				message="tns:IPsmConfigurationService_StartConfigurationFromReferencePermissiveModeWithSpecificBehaviour_InputMessage" />
+			<wsdl:output
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/StartConfigurationFromReferencePermissiveModeWithSpecificBehaviourResponse"
+				message="tns:IPsmConfigurationService_StartConfigurationFromReferencePermissiveModeWithSpecificBehaviour_OutputMessage" />
+			<wsdl:fault
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/StartConfigurationFromReferencePermissiveModeWithSpecificBehaviourDataFormatterFaultFault"
+				name="DataFormatterFaultFault"
+				message="tns:IPsmConfigurationService_StartConfigurationFromReferencePermissiveModeWithSpecificBehaviour_DataFormatterFaultFault_FaultMessage" />
+			<wsdl:fault
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/StartConfigurationFromReferencePermissiveModeWithSpecificBehaviourInvalidParameterFaultFault"
+				name="InvalidParameterFaultFault"
+				message="tns:IPsmConfigurationService_StartConfigurationFromReferencePermissiveModeWithSpecificBehaviour_InvalidParameterFaultFault_FaultMessage" />
+			<wsdl:fault
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/StartConfigurationFromReferencePermissiveModeWithSpecificBehaviourConfigurationEngineFaultFault"
+				name="ConfigurationEngineFaultFault"
+				message="tns:IPsmConfigurationService_StartConfigurationFromReferencePermissiveModeWithSpecificBehaviour_ConfigurationEngineFaultFault_FaultMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="SetCharacteristicValues">
+			<wsdl:input
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/SetCharacteristicValues"
+				message="tns:IPsmConfigurationService_SetCharacteristicValues_InputMessage" />
+			<wsdl:output
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/SetCharacteristicValuesResponse"
+				message="tns:IPsmConfigurationService_SetCharacteristicValues_OutputMessage" />
+			<wsdl:fault
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/SetCharacteristicValuesDataFormatterFaultFault"
+				name="DataFormatterFaultFault"
+				message="tns:IPsmConfigurationService_SetCharacteristicValues_DataFormatterFaultFault_FaultMessage" />
+			<wsdl:fault
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/SetCharacteristicValuesInvalidParameterFaultFault"
+				name="InvalidParameterFaultFault"
+				message="tns:IPsmConfigurationService_SetCharacteristicValues_InvalidParameterFaultFault_FaultMessage" />
+			<wsdl:fault
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/SetCharacteristicValuesConfigurationEngineFaultFault"
+				name="ConfigurationEngineFaultFault"
+				message="tns:IPsmConfigurationService_SetCharacteristicValues_ConfigurationEngineFaultFault_FaultMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="GetConfiguration">
+			<wsdl:input
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/GetConfiguration"
+				message="tns:IPsmConfigurationService_GetConfiguration_InputMessage" />
+			<wsdl:output
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/GetConfigurationResponse"
+				message="tns:IPsmConfigurationService_GetConfiguration_OutputMessage" />
+			<wsdl:fault
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/GetConfigurationDataFormatterFaultFault"
+				name="DataFormatterFaultFault"
+				message="tns:IPsmConfigurationService_GetConfiguration_DataFormatterFaultFault_FaultMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="DeleteConfiguration">
+			<wsdl:input
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/DeleteConfiguration"
+				message="tns:IPsmConfigurationService_DeleteConfiguration_InputMessage" />
+			<wsdl:output
+				wsaw:Action="http://tempuri.org/IPsmConfigurationService/DeleteConfigurationResponse"
+				message="tns:IPsmConfigurationService_DeleteConfiguration_OutputMessage" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding
+		name="BasicHttpBinding_IPsmConfigurationService"
+		type="tns:IPsmConfigurationService">
+		<soap:binding
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="StartConfiguration">
+			<soap:operation
+				soapAction="http://tempuri.org/IPsmConfigurationService/StartConfiguration"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="InvalidParameterFaultFault">
+				<soap:fault use="literal"
+					name="InvalidParameterFaultFault" namespace="" />
+			</wsdl:fault>
+			<wsdl:fault name="DataFormatterFaultFault">
+				<soap:fault use="literal" name="DataFormatterFaultFault"
+					namespace="" />
+			</wsdl:fault>
+			<wsdl:fault name="ConfigurationEngineFaultFault">
+				<soap:fault use="literal"
+					name="ConfigurationEngineFaultFault" namespace="" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation
+			name="StartConfigurationWithSpecificBehaviour">
+			<soap:operation
+				soapAction="http://tempuri.org/IPsmConfigurationService/StartConfigurationWithSpecificBehaviour"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="ConfigurationEngineFaultFault">
+				<soap:fault use="literal"
+					name="ConfigurationEngineFaultFault" namespace="" />
+			</wsdl:fault>
+			<wsdl:fault name="DataFormatterFaultFault">
+				<soap:fault use="literal" name="DataFormatterFaultFault"
+					namespace="" />
+			</wsdl:fault>
+			<wsdl:fault name="InvalidParameterFaultFault">
+				<soap:fault use="literal"
+					name="InvalidParameterFaultFault" namespace="" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="StartConfigurationPermissiveMode">
+			<soap:operation
+				soapAction="http://tempuri.org/IPsmConfigurationService/StartConfigurationPermissiveMode"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="DataFormatterFaultFault">
+				<soap:fault use="literal" name="DataFormatterFaultFault"
+					namespace="" />
+			</wsdl:fault>
+			<wsdl:fault name="ConfigurationEngineFaultFault">
+				<soap:fault use="literal"
+					name="ConfigurationEngineFaultFault" namespace="" />
+			</wsdl:fault>
+			<wsdl:fault name="InvalidParameterFaultFault">
+				<soap:fault use="literal"
+					name="InvalidParameterFaultFault" namespace="" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation
+			name="StartConfigurationPermissiveModeWithSpecificBehaviour">
+			<soap:operation
+				soapAction="http://tempuri.org/IPsmConfigurationService/StartConfigurationPermissiveModeWithSpecificBehaviour"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="DataFormatterFaultFault">
+				<soap:fault use="literal" name="DataFormatterFaultFault"
+					namespace="" />
+			</wsdl:fault>
+			<wsdl:fault name="ConfigurationEngineFaultFault">
+				<soap:fault use="literal"
+					name="ConfigurationEngineFaultFault" namespace="" />
+			</wsdl:fault>
+			<wsdl:fault name="InvalidParameterFaultFault">
+				<soap:fault use="literal"
+					name="InvalidParameterFaultFault" namespace="" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="StartConfigurationFromReference">
+			<soap:operation
+				soapAction="http://tempuri.org/IPsmConfigurationService/StartConfigurationFromReference"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="DataFormatterFaultFault">
+				<soap:fault use="literal" name="DataFormatterFaultFault"
+					namespace="" />
+			</wsdl:fault>
+			<wsdl:fault name="InvalidParameterFaultFault">
+				<soap:fault use="literal"
+					name="InvalidParameterFaultFault" namespace="" />
+			</wsdl:fault>
+			<wsdl:fault name="ConfigurationEngineFaultFault">
+				<soap:fault use="literal"
+					name="ConfigurationEngineFaultFault" namespace="" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation
+			name="StartConfigurationFromReferenceWithSpecificBehaviour">
+			<soap:operation
+				soapAction="http://tempuri.org/IPsmConfigurationService/StartConfigurationFromReferenceWithSpecificBehaviour"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="InvalidParameterFaultFault">
+				<soap:fault use="literal"
+					name="InvalidParameterFaultFault" namespace="" />
+			</wsdl:fault>
+			<wsdl:fault name="ConfigurationEngineFaultFault">
+				<soap:fault use="literal"
+					name="ConfigurationEngineFaultFault" namespace="" />
+			</wsdl:fault>
+			<wsdl:fault name="DataFormatterFaultFault">
+				<soap:fault use="literal" name="DataFormatterFaultFault"
+					namespace="" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation
+			name="StartConfigurationFromReferencePermissiveMode">
+			<soap:operation
+				soapAction="http://tempuri.org/IPsmConfigurationService/StartConfigurationFromReferencePermissiveMode"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="InvalidParameterFaultFault">
+				<soap:fault use="literal"
+					name="InvalidParameterFaultFault" namespace="" />
+			</wsdl:fault>
+			<wsdl:fault name="ConfigurationEngineFaultFault">
+				<soap:fault use="literal"
+					name="ConfigurationEngineFaultFault" namespace="" />
+			</wsdl:fault>
+			<wsdl:fault name="DataFormatterFaultFault">
+				<soap:fault use="literal" name="DataFormatterFaultFault"
+					namespace="" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation
+			name="StartConfigurationFromReferencePermissiveModeWithSpecificBehaviour">
+			<soap:operation
+				soapAction="http://tempuri.org/IPsmConfigurationService/StartConfigurationFromReferencePermissiveModeWithSpecificBehaviour"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="DataFormatterFaultFault">
+				<soap:fault use="literal" name="DataFormatterFaultFault"
+					namespace="" />
+			</wsdl:fault>
+			<wsdl:fault name="InvalidParameterFaultFault">
+				<soap:fault use="literal"
+					name="InvalidParameterFaultFault" namespace="" />
+			</wsdl:fault>
+			<wsdl:fault name="ConfigurationEngineFaultFault">
+				<soap:fault use="literal"
+					name="ConfigurationEngineFaultFault" namespace="" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SetCharacteristicValues">
+			<soap:operation
+				soapAction="http://tempuri.org/IPsmConfigurationService/SetCharacteristicValues"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="DataFormatterFaultFault">
+				<soap:fault use="literal" name="DataFormatterFaultFault"
+					namespace="" />
+			</wsdl:fault>
+			<wsdl:fault name="InvalidParameterFaultFault">
+				<soap:fault use="literal"
+					name="InvalidParameterFaultFault" namespace="" />
+			</wsdl:fault>
+			<wsdl:fault name="ConfigurationEngineFaultFault">
+				<soap:fault use="literal"
+					name="ConfigurationEngineFaultFault" namespace="" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetConfiguration">
+			<soap:operation
+				soapAction="http://tempuri.org/IPsmConfigurationService/GetConfiguration"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="DataFormatterFaultFault">
+				<soap:fault use="literal" name="DataFormatterFaultFault"
+					namespace="" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteConfiguration">
+			<soap:operation
+				soapAction="http://tempuri.org/IPsmConfigurationService/DeleteConfiguration"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="PsmConfigurationService">
+		<wsdl:port name="BasicHttpBinding_IPsmConfigurationService"
+			binding="tns:BasicHttpBinding_IPsmConfigurationService">
+			<soap:address
+				location="http://10.195.163.214/PSMOnline/PsmConfigurationService.svc" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

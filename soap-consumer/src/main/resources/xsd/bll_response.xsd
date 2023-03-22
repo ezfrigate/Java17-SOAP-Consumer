@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:jxb="https://jakarta.ee/xml/ns/jaxb"
+           jxb:version="3.0">
+
+<xs:complexType name="instance">
+    <xs:sequence>
+    	<xs:element maxOccurs="unbounded" name="instance" type="instance"/>
+    </xs:sequence>
+    <xs:attribute name="bompath" type="xs:string" use="required"/>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="matnr" type="xs:string" use="required"/>
+    <xs:attribute name="parentId" type="xs:string" use="required"/>
+    <xs:attribute name="posnr" type="xs:string" use="required"/>
+    <xs:attribute name="qty" type="xs:unsignedByte" use="required"/>
+</xs:complexType>
+  <xs:element name="nodes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="hier">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="hiernode">
+                <xs:complexType>
+                  <xs:attribute name="bompath" type="xs:string" use="required" />
+                  <xs:attribute name="desc" type="xs:string" use="required" />
+                  <xs:attribute name="icon" type="xs:string" use="required" />
+                  <xs:attribute name="id" type="xs:string" use="required" />
+                  <xs:attribute name="name" type="xs:string" use="required" />
+                  <xs:attribute name="posnr" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+		
+		<xs:element name="HiveInstances">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="instance" maxOccurs="unbounded" type="instance">
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+		
+        <xs:element name="node" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="csticGroup">
+                <xs:complexType>
+                  <xs:sequence minOccurs="0">
+                    <xs:element maxOccurs="unbounded" name="cstic">
+                      <xs:complexType>
+                        <xs:sequence>
+						  <xs:element minOccurs="0" name="desc" type="xs:string" />
+                          <xs:element name="name" type="xs:string" />
+                          <xs:element maxOccurs="unbounded" name="csticValueStatus">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="name" type="xs:string" />
+                              </xs:sequence>
+                              <xs:attribute name="isAssigned" type="xs:boolean" use="required" />
+                              <xs:attribute name="isDefault" type="xs:boolean" use="required" />
+                              <xs:attribute name="valueId" type="xs:string" use="required" />
+                              <xs:attribute name="img" type="xs:string" use="optional" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="bompath" type="xs:string" use="required" />
+                        <xs:attribute name="hasDefault" type="xs:boolean" use="required" />
+                        <xs:attribute name="id" type="xs:string" use="required" />
+                        <xs:attribute name="isAssigned" type="xs:boolean" use="required" />
+                        <xs:attribute name="isConflicting" type="xs:boolean" use="required" />
+                        <xs:attribute name="isMultiValued" type="xs:boolean" use="required" />
+                        <xs:attribute name="isReadOnly" type="xs:boolean" use="required" />
+                        <xs:attribute name="isRequired" type="xs:boolean" use="required" />
+                        <xs:attribute name="isVisible" type="xs:boolean" use="required" />
+                        <xs:attribute name="unit" type="xs:string" use="required" />
+                        <xs:attribute name="qty" type="xs:unsignedByte" use="optional" />
+                        <xs:attribute name="intervalMin" type="xs:decimal" use="optional" />
+                        <xs:attribute name="intervalMax" type="xs:decimal" use="optional" />
+                        <xs:attribute name="entryMask" type="xs:string" use="optional" />
+                        <xs:attribute name="type" type="xs:string" use="optional" />
+                        <xs:attribute name="freeEntry" type="xs:boolean" use="optional" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="id" type="xs:string" use="required" />
+                  <xs:attribute name="isExpanded" type="xs:boolean" use="required" />
+                  <xs:attribute name="isVisible" type="xs:boolean" use="required" />
+                  <xs:attribute name="name" type="xs:string" use="required" />
+                  <xs:attribute name="group" type="xs:string" use="required"/>
+                  <xs:attribute name="isComplete" type="xs:boolean" use="required"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="bompath" type="xs:string" use="required" />
+            <xs:attribute name="desc" type="xs:string" use="required" />
+            <xs:attribute name="displayParent" type="xs:boolean" use="required" />
+            <xs:attribute name="id" type="xs:string" use="required" />
+            <xs:attribute name="isComplete" type="xs:boolean" use="required" />
+            <xs:attribute name="isConflicting" type="xs:boolean" use="required" />
+            <xs:attribute name="isGhost" type="xs:boolean" use="required" />
+            <xs:attribute name="name" type="xs:string" use="required" />
+            <xs:attribute name="parentId" type="xs:string" use="required" />
+            <xs:attribute name="position" type="xs:unsignedByte" use="required" />
+            <xs:attribute name="qty" type="xs:unsignedByte" use="required" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="unsetCstics">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="unsetCstic" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                      <xs:attribute type="xs:string" name="bompath" use="required"/>
+                      <xs:attribute type="xs:string" name="id" use="required"/>
+                      <xs:attribute type="xs:string" name="valueId" use="required"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+        <xs:attribute type="xs:string" name="alias_id" use="required"/>
+        <xs:attribute type="xs:string" name="configId" use="required"/>
+        <xs:attribute type="xs:string" name="du_id" use="required"/>
+        <xs:attribute type="xs:string" name="du_status" use="required"/>
+        <xs:attribute type="xs:string" name="hasGlobalGroups" use="required"/>
+        <xs:attribute type="xs:string" name="kb_id" use="required"/>
+        <xs:attribute type="xs:string" name="language" use="required"/>
+        <xs:attribute type="xs:string" name="project_id" use="required"/>
+        <xs:attribute type="xs:string" name="scope" use="required"/>
+        <xs:attribute type="xs:string" name="country" use="required"/>
+        <xs:attribute type="xs:string" name="sscVersion" use="required"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

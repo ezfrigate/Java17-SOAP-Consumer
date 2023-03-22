@@ -1,0 +1,1268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:tns="http://schneider.com/bll/ws/"
+                  xmlns:jaxws="https://jakarta.ee/xml/ns/jaxws"
+                  targetNamespace="http://schneider.com/bll/ws/">
+   <wsdl:types>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://schneider.com/bll/ws/" version="1.0">
+         <xs:element name="createConfigAndInitFromRef" type="tns:createConfigAndInitFromRef" />
+         <xs:element name="createConfigAndInitFromRefResponse" type="tns:createConfigAndInitFromRefResponse" />
+         <xs:element name="createConfigForDu" type="tns:createConfigForDu" />
+         <xs:element name="createConfigForDuResponse" type="tns:createConfigForDuResponse" />
+         <xs:element name="createConfigForKB" type="tns:createConfigForKB" />
+         <xs:element name="createConfigForKBResponse" type="tns:createConfigForKBResponse" />
+         <xs:element name="createConfigFromRef" type="tns:createConfigFromRef" />
+         <xs:element name="createConfigFromRefForDu" type="tns:createConfigFromRefForDu" />
+         <xs:element name="createConfigFromRefForDuResponse" type="tns:createConfigFromRefForDuResponse" />
+         <xs:element name="createConfigFromRefResponse" type="tns:createConfigFromRefResponse" />
+         <xs:element name="deleteConfig" type="tns:deleteConfig" />
+         <xs:element name="deleteConfigResponse" type="tns:deleteConfigResponse" />
+         <xs:element name="deleteCstic" type="tns:deleteCstic" />
+         <xs:element name="deleteCsticResponse" type="tns:deleteCsticResponse" />
+         <xs:element name="deleteCsticValue" type="tns:deleteCsticValue" />
+         <xs:element name="deleteCsticValueResponse" type="tns:deleteCsticValueResponse" />
+         <xs:element name="deleteCstics" type="tns:deleteCstics" />
+         <xs:element name="deleteCsticsResponse" type="tns:deleteCsticsResponse" />
+         <xs:element name="deletePersistedConfig" type="tns:deletePersistedConfig" />
+         <xs:element name="deletePersistedConfigResponse" type="tns:deletePersistedConfigResponse" />
+         <xs:element name="downloadConfig" type="tns:downloadConfig" />
+         <xs:element name="downloadConfigResponse" type="tns:downloadConfigResponse" />
+         <xs:element name="downloadPersistedConfig" type="tns:downloadPersistedConfig" />
+         <xs:element name="downloadPersistedConfigResponse" type="tns:downloadPersistedConfigResponse" />
+         <xs:element name="downloadPersistedConfigService" type="tns:downloadPersistedConfigService" />
+         <xs:element name="downloadPersistedConfigServiceResponse" type="tns:downloadPersistedConfigServiceResponse" />
+         <xs:element name="downloadPersistedConfigZip" type="tns:downloadPersistedConfigZip" />
+         <xs:element name="downloadPersistedConfigZipResponse" type="tns:downloadPersistedConfigZipResponse" />
+         <xs:element name="freezeConfig" type="tns:freezeConfig" />
+         <xs:element name="freezeConfigResponse" type="tns:freezeConfigResponse" />
+         <xs:element name="getConfiguration" type="tns:getConfiguration" />
+         <xs:element name="getConfigurationResponse" type="tns:getConfigurationResponse" />
+         <xs:element name="getDUs" type="tns:getDUs" />
+         <xs:element name="getDUsResponse" type="tns:getDUsResponse" />
+         <xs:element name="getFavs" type="tns:getFavs" />
+         <xs:element name="getFavsResponse" type="tns:getFavsResponse" />
+         <xs:element name="getGUID" type="tns:getGUID" />
+         <xs:element name="getGUIDResponse" type="tns:getGUIDResponse" />
+         <xs:element name="getHiveXml" type="tns:getHiveXml" />
+         <xs:element name="getHiveXmlResponse" type="tns:getHiveXmlResponse" />
+         <xs:element name="getHiveZip" type="tns:getHiveZip" />
+         <xs:element name="getHiveZipResponse" type="tns:getHiveZipResponse" />
+         <xs:element name="getPersistedConfig" type="tns:getPersistedConfig" />
+         <xs:element name="getPersistedConfigResponse" type="tns:getPersistedConfigResponse" />
+         <xs:element name="getRefsByDU" type="tns:getRefsByDU" />
+         <xs:element name="getRefsByDUResponse" type="tns:getRefsByDUResponse" />
+         <xs:element name="getStatus" type="tns:getStatus" />
+         <xs:element name="getStatusResponse" type="tns:getStatusResponse" />
+         <xs:element name="getWSVersion" type="tns:getWSVersion" />
+         <xs:element name="getWSVersionResponse" type="tns:getWSVersionResponse" />
+         <xs:element name="heartbeat" type="tns:heartbeat" />
+         <xs:element name="heartbeatResponse" type="tns:heartbeatResponse" />
+         <xs:element name="removeFav" type="tns:removeFav" />
+         <xs:element name="removeFavResponse" type="tns:removeFavResponse" />
+         <xs:element name="resetConfig" type="tns:resetConfig" />
+         <xs:element name="resetConfigResponse" type="tns:resetConfigResponse" />
+         <xs:element name="saveConfig" type="tns:saveConfig" />
+         <xs:element name="saveConfigResponse" type="tns:saveConfigResponse" />
+         <xs:element name="setCstic" type="tns:setCstic" />
+         <xs:element name="setCsticResponse" type="tns:setCsticResponse" />
+         <xs:element name="setCsticWhenPossible" type="tns:setCsticWhenPossible" />
+         <xs:element name="setCsticWhenPossibleResponse" type="tns:setCsticWhenPossibleResponse" />
+         <xs:element name="setCstics" type="tns:setCstics" />
+         <xs:element name="setCsticsResponse" type="tns:setCsticsResponse" />
+         <xs:element name="setFav" type="tns:setFav" />
+         <xs:element name="setFavResponse" type="tns:setFavResponse" />
+         <xs:element name="setIedCstics" type="tns:setIedCstics" />
+         <xs:element name="setIedCsticsResponse" type="tns:setIedCsticsResponse" />
+         <xs:element name="setLabelCstics" type="tns:setLabelCstics" />
+         <xs:element name="setLabelCsticsResponse" type="tns:setLabelCsticsResponse" />
+         <xs:element name="updateFav" type="tns:updateFav" />
+         <xs:element name="updateFavResponse" type="tns:updateFavResponse" />
+         <xs:element name="uploadConfig" type="tns:uploadConfig" />
+         <xs:element name="uploadConfigResponse" type="tns:uploadConfigResponse" />
+         <xs:element name="uploadConfigZip" type="tns:uploadConfigZip" />
+         <xs:element name="uploadConfigZipResponse" type="tns:uploadConfigZipResponse" />
+         <xs:complexType name="createConfigForDu">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="duId" type="xs:string" />
+               <xs:element minOccurs="0" name="setDefaults" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="createConfigForDuResponse">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="return" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="createConfigForKB">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="kbName" type="xs:string" />
+               <xs:element minOccurs="0" name="kbVersion" type="xs:string" />
+               <xs:element minOccurs="0" name="languageCode" type="xs:string" />
+               <xs:element minOccurs="0" name="setDefaults" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="createConfigForKBResponse">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="return" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="createConfigFromRef">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="kbName" type="xs:string" />
+               <xs:element minOccurs="0" name="kbVersion" type="xs:string" />
+               <xs:element minOccurs="0" name="languageCode" type="xs:string" />
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="setCstics" type="tns:setCsticDef" />
+               <xs:element minOccurs="0" name="hardset" type="xs:string" />
+               <xs:element minOccurs="0" name="setDefaults" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="setCsticDef">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="bompath" type="xs:string" />
+               <xs:element minOccurs="0" name="csticId" type="xs:string" />
+               <xs:element minOccurs="0" name="csticValue" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="createConfigFromRefResponse">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="return" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="createConfigFromRefForDu">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="duId" type="xs:string" />
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="setCstics" type="tns:setCsticDef" />
+               <xs:element minOccurs="0" name="hardset" type="xs:string" />
+               <xs:element minOccurs="0" name="setDefaults" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="createConfigFromRefForDuResponse">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="return" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="deleteConfig">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="configId" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="deleteConfigResponse">
+            <xs:sequence />
+         </xs:complexType>
+         <xs:complexType name="deleteCstic">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="configId" type="xs:string" />
+               <xs:element minOccurs="0" name="bompath" type="xs:string" />
+               <xs:element minOccurs="0" name="csticId" type="xs:string" />
+               <xs:element minOccurs="0" name="autoUnsetUserHiddenCstics" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="deleteCsticResponse">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="return" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="deleteCstics">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="configId" type="xs:string" />
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="setCstics" type="tns:setCsticDef" />
+               <xs:element minOccurs="0" name="autoUnsetUserHiddenCstics" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="deleteCsticsResponse">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="return" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="getWSVersion">
+            <xs:sequence />
+         </xs:complexType>
+         <xs:complexType name="getWSVersionResponse">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="return" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="getConfiguration">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="configId" type="xs:string" />
+               <xs:element minOccurs="0" name="lang" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="getConfigurationResponse">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="return" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="getDUs">
+            <xs:sequence />
+         </xs:complexType>
+         <xs:complexType name="getDUsResponse">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="return" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="getGUID">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="du_code" type="xs:string" />
+               <xs:element minOccurs="0" name="kb_code" type="xs:string" />
+               <xs:element minOccurs="0" name="scope" type="xs:string" />
+               <xs:element minOccurs="0" name="language" type="xs:string" />
+               <xs:element minOccurs="0" name="alias_code" type="xs:string" />
+               <xs:element minOccurs="0" name="project_code" type="xs:string" />
+               <xs:element minOccurs="0" name="du_status" type="xs:string" />
+               <xs:element minOccurs="0" name="du_build" type="xs:string" />
+               <xs:element minOccurs="0" name="du_version" type="xs:string" />
+               <xs:element minOccurs="0" name="std_version" type="xs:string" />
+               <xs:element minOccurs="0" name="project_version" type="xs:string" />
+               <xs:element minOccurs="0" name="country" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="getGUIDResponse">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="return" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="getHiveXml">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="configId" type="xs:string" />
+               <xs:element minOccurs="0" name="type" type="xs:string" />
+               <xs:element minOccurs="0" name="headerReplacement" type="xs:string" />
+               <xs:element minOccurs="0" name="setDefaults" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="getHiveXmlResponse">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="return" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="getHiveZip">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="configId" type="xs:string" />
+               <xs:element minOccurs="0" name="type" type="xs:string" />
+               <xs:element minOccurs="0" name="headerReplacement" type="xs:string" />
+               <xs:element minOccurs="0" name="setDefaults" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="getHiveZipResponse">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="return" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="getRefsByDU">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="guid" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="getRefsByDUResponse">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="return" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="resetConfig">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="configId" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="resetConfigResponse">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="return" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="setCstic">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="configId" type="xs:string" />
+               <xs:element minOccurs="0" name="bompath" type="xs:string" />
+               <xs:element minOccurs="0" name="csticId" type="xs:string" />
+               <xs:element minOccurs="0" name="valueId" type="xs:string" />
+               <xs:element minOccurs="0" name="autoUnsetUserHiddenCstics" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="setCsticResponse">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="return" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="deleteCsticValue">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="configId" type="xs:string" />
+               <xs:element minOccurs="0" name="bompath" type="xs:string" />
+               <xs:element minOccurs="0" name="csticId" type="xs:string" />
+               <xs:element minOccurs="0" name="valueId" type="xs:string" />
+               <xs:element minOccurs="0" name="autoUnsetUserHiddenCstics" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="deleteCsticValueResponse">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="return" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="setCstics">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="configId" type="xs:string" />
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="setCstics" type="tns:setCsticDef" />
+               <xs:element minOccurs="0" name="autoUnsetUserHiddenCstics" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="setCsticsResponse">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="return" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="setCsticWhenPossible">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="configId" type="xs:string" />
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="setCstics" type="tns:setCsticDef" />
+               <xs:element minOccurs="0" name="autoUnsetUserHiddenCstics" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="setCsticWhenPossibleResponse">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="return" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="setLabelCstics">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="configId" type="xs:string" />
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="setCstics" type="tns:setCsticDef" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="setLabelCsticsResponse">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="return" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="getStatus">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="persistedConfigId" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="getStatusResponse">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="return" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="downloadPersistedConfig">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="persistedConfigId" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="downloadPersistedConfigResponse">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="return" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="downloadPersistedConfigZip">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="persistedConfigId" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="downloadPersistedConfigZipResponse">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="return" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="freezeConfig">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="persistedConfigId" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="freezeConfigResponse">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="return" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="downloadPersistedConfigService">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="persistedConfigId" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="downloadPersistedConfigServiceResponse">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="return" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="saveConfig">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="configId" type="xs:string" />
+               <xs:element minOccurs="0" name="userId" type="xs:string" />
+               <xs:element minOccurs="0" name="persistedConfigId" type="xs:string" />
+               <xs:element minOccurs="0" name="type" type="xs:string" />
+               <xs:element minOccurs="0" name="headerReplacement" type="xs:string" />
+               <xs:element minOccurs="0" name="setDefaults" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="saveConfigResponse">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="return" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="downloadConfig">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="configId" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="downloadConfigResponse">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="return" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="uploadConfig">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="hiveXml" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="uploadConfigResponse">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="return" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="uploadConfigZip">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="zipStrEncoded" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="uploadConfigZipResponse">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="return" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="getPersistedConfig">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="persistedConfigId" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="getPersistedConfigResponse">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="return" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="setFav">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="userId" type="xs:string" />
+               <xs:element minOccurs="0" name="configId" type="xs:string" />
+               <xs:element minOccurs="0" name="name" type="xs:string" />
+               <xs:element minOccurs="0" name="comment" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="setFavResponse">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="return" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="getFavs">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="userId" type="xs:string" />
+               <xs:element minOccurs="0" name="productId" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="getFavsResponse">
+            <xs:sequence>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:getFavsDef" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="getFavsDef">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="configName" type="xs:string" />
+               <xs:element minOccurs="0" name="persistedConfigId" type="xs:string" />
+               <xs:element minOccurs="0" name="userComment" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="deletePersistedConfig">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="persistedConfigId" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="deletePersistedConfigResponse">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="return" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="removeFav">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="userId" type="xs:string" />
+               <xs:element minOccurs="0" name="persistedConfigId" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="removeFavResponse">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="return" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="updateFav">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="userId" type="xs:string" />
+               <xs:element minOccurs="0" name="persistedConfigId" type="xs:string" />
+               <xs:element minOccurs="0" name="name" type="xs:string" />
+               <xs:element minOccurs="0" name="comment" type="xs:string" />
+               <xs:element minOccurs="0" name="configId" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="updateFavResponse">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="return" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="createConfigAndInitFromRef">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="duId" type="xs:string" />
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="setCstics" type="tns:setCsticDef" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="createConfigAndInitFromRefResponse">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="return" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="heartbeat">
+            <xs:sequence />
+         </xs:complexType>
+         <xs:complexType name="heartbeatResponse">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="return" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="setIedCstics">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="configId" type="xs:string" />
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="setCstics" type="tns:setCsticDef" />
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="setIedCsticsResponse">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="return" type="xs:string" />
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>
+   </wsdl:types>
+   <wsdl:message name="createConfigForDuIn">
+      <wsdl:part element="tns:createConfigForDu" name="parameters" />
+   </wsdl:message>
+   <wsdl:message name="createConfigForDuOut">
+      <wsdl:part element="tns:createConfigForDuResponse" name="createConfigForDuResponse" />
+   </wsdl:message>
+   <wsdl:message name="createConfigForKBIn">
+      <wsdl:part element="tns:createConfigForKB" name="parameters" />
+   </wsdl:message>
+   <wsdl:message name="createConfigForKBOut">
+      <wsdl:part element="tns:createConfigForKBResponse" name="createConfigForKBResponse" />
+   </wsdl:message>
+   <wsdl:message name="createConfigFromRefIn">
+      <wsdl:part element="tns:createConfigFromRef" name="parameters" />
+   </wsdl:message>
+   <wsdl:message name="createConfigFromRefOut">
+      <wsdl:part element="tns:createConfigFromRefResponse" name="createConfigFromRefResponse" />
+   </wsdl:message>
+   <wsdl:message name="createConfigFromRefForDuIn">
+      <wsdl:part element="tns:createConfigFromRefForDu" name="parameters" />
+   </wsdl:message>
+   <wsdl:message name="createConfigFromRefForDuOut">
+      <wsdl:part element="tns:createConfigFromRefForDuResponse" name="createConfigFromRefForDuResponse" />
+   </wsdl:message>
+   <wsdl:message name="deleteConfigIn">
+      <wsdl:part element="tns:deleteConfig" name="parameters" />
+   </wsdl:message>
+   <wsdl:message name="deleteConfigOut">
+      <wsdl:part element="tns:deleteConfigResponse" name="deleteConfigResponse" />
+   </wsdl:message>
+   <wsdl:message name="deleteCsticIn">
+      <wsdl:part element="tns:deleteCstic" name="parameters" />
+   </wsdl:message>
+   <wsdl:message name="deleteCsticOut">
+      <wsdl:part element="tns:deleteCsticResponse" name="deleteCsticResponse" />
+   </wsdl:message>
+   <wsdl:message name="deleteCsticsIn">
+      <wsdl:part element="tns:deleteCstics" name="parameters" />
+   </wsdl:message>
+   <wsdl:message name="deleteCsticsOut">
+      <wsdl:part element="tns:deleteCsticsResponse" name="deleteCsticsResponse" />
+   </wsdl:message>
+   <wsdl:message name="getWSVersionIn">
+      <wsdl:part element="tns:getWSVersion" name="parameters" />
+   </wsdl:message>
+   <wsdl:message name="getWSVersionOut">
+      <wsdl:part element="tns:getWSVersionResponse" name="getWSVersionResponse" />
+   </wsdl:message>
+   <wsdl:message name="getConfigurationIn">
+      <wsdl:part element="tns:getConfiguration" name="parameters" />
+   </wsdl:message>
+   <wsdl:message name="getConfigurationOut">
+      <wsdl:part element="tns:getConfigurationResponse" name="getConfigurationResponse" />
+   </wsdl:message>
+   <wsdl:message name="getDUsIn">
+      <wsdl:part element="tns:getDUs" name="parameters" />
+   </wsdl:message>
+   <wsdl:message name="getDUsOut">
+      <wsdl:part element="tns:getDUsResponse" name="getDUsResponse" />
+   </wsdl:message>
+   <wsdl:message name="getGUIDIn">
+      <wsdl:part element="tns:getGUID" name="parameters" />
+   </wsdl:message>
+   <wsdl:message name="getGUIDOut">
+      <wsdl:part element="tns:getGUIDResponse" name="getGUIDResponse" />
+   </wsdl:message>
+   <wsdl:message name="getHiveXmlIn">
+      <wsdl:part element="tns:getHiveXml" name="parameters" />
+   </wsdl:message>
+   <wsdl:message name="getHiveXmlOut">
+      <wsdl:part element="tns:getHiveXmlResponse" name="getHiveXmlResponse" />
+   </wsdl:message>
+   <wsdl:message name="getHiveZipIn">
+      <wsdl:part element="tns:getHiveZip" name="parameters" />
+   </wsdl:message>
+   <wsdl:message name="getHiveZipOut">
+      <wsdl:part element="tns:getHiveZipResponse" name="getHiveZipResponse" />
+   </wsdl:message>
+   <wsdl:message name="getRefsByDUIn">
+      <wsdl:part element="tns:getRefsByDU" name="parameters" />
+   </wsdl:message>
+   <wsdl:message name="getRefsByDUOut">
+      <wsdl:part element="tns:getRefsByDUResponse" name="getRefsByDUResponse" />
+   </wsdl:message>
+   <wsdl:message name="resetConfigIn">
+      <wsdl:part element="tns:resetConfig" name="parameters" />
+   </wsdl:message>
+   <wsdl:message name="resetConfigOut">
+      <wsdl:part element="tns:resetConfigResponse" name="resetConfigResponse" />
+   </wsdl:message>
+   <wsdl:message name="setCsticIn">
+      <wsdl:part element="tns:setCstic" name="parameters" />
+   </wsdl:message>
+   <wsdl:message name="setCsticOut">
+      <wsdl:part element="tns:setCsticResponse" name="setCsticResponse" />
+   </wsdl:message>
+   <wsdl:message name="deleteCsticValueIn">
+      <wsdl:part element="tns:deleteCsticValue" name="parameters" />
+   </wsdl:message>
+   <wsdl:message name="deleteCsticValueOut">
+      <wsdl:part element="tns:deleteCsticValueResponse" name="deleteCsticValueResponse" />
+   </wsdl:message>
+   <wsdl:message name="setCsticsIn">
+      <wsdl:part element="tns:setCstics" name="parameters" />
+   </wsdl:message>
+   <wsdl:message name="setCsticsOut">
+      <wsdl:part element="tns:setCsticsResponse" name="setCsticsResponse" />
+   </wsdl:message>
+   <wsdl:message name="setCsticWhenPossibleIn">
+      <wsdl:part element="tns:setCsticWhenPossible" name="parameters" />
+   </wsdl:message>
+   <wsdl:message name="setCsticWhenPossibleOut">
+      <wsdl:part element="tns:setCsticWhenPossibleResponse" name="setCsticWhenPossibleResponse" />
+   </wsdl:message>
+   <wsdl:message name="setLabelCsticsIn">
+      <wsdl:part element="tns:setLabelCstics" name="parameters" />
+   </wsdl:message>
+   <wsdl:message name="setLabelCsticsOut">
+      <wsdl:part element="tns:setLabelCsticsResponse" name="setLabelCsticsResponse" />
+   </wsdl:message>
+   <wsdl:message name="getStatusIn">
+      <wsdl:part element="tns:getStatus" name="parameters" />
+   </wsdl:message>
+   <wsdl:message name="getStatusOut">
+      <wsdl:part element="tns:getStatusResponse" name="getStatusResponse" />
+   </wsdl:message>
+   <wsdl:message name="downloadPersistedConfigIn">
+      <wsdl:part element="tns:downloadPersistedConfig" name="parameters" />
+   </wsdl:message>
+   <wsdl:message name="downloadPersistedConfigOut">
+      <wsdl:part element="tns:downloadPersistedConfigResponse" name="downloadPersistedConfigResponse" />
+   </wsdl:message>
+   <wsdl:message name="downloadPersistedConfigZipIn">
+      <wsdl:part element="tns:downloadPersistedConfigZip" name="parameters" />
+   </wsdl:message>
+   <wsdl:message name="downloadPersistedConfigZipOut">
+      <wsdl:part element="tns:downloadPersistedConfigZipResponse" name="downloadPersistedConfigZipResponse" />
+   </wsdl:message>
+   <wsdl:message name="freezeConfigIn">
+      <wsdl:part element="tns:freezeConfig" name="parameters" />
+   </wsdl:message>
+   <wsdl:message name="freezeConfigOut">
+      <wsdl:part element="tns:freezeConfigResponse" name="freezeConfigResponse" />
+   </wsdl:message>
+   <wsdl:message name="downloadPersistedConfigServiceIn">
+      <wsdl:part element="tns:downloadPersistedConfigService" name="parameters" />
+   </wsdl:message>
+   <wsdl:message name="downloadPersistedConfigServiceOut">
+      <wsdl:part element="tns:downloadPersistedConfigServiceResponse" name="downloadPersistedConfigServiceResponse" />
+   </wsdl:message>
+   <wsdl:message name="saveConfigIn">
+      <wsdl:part element="tns:saveConfig" name="parameters" />
+   </wsdl:message>
+   <wsdl:message name="saveConfigOut">
+      <wsdl:part element="tns:saveConfigResponse" name="saveConfigResponse" />
+   </wsdl:message>
+   <wsdl:message name="downloadConfigIn">
+      <wsdl:part element="tns:downloadConfig" name="parameters" />
+   </wsdl:message>
+   <wsdl:message name="downloadConfigOut">
+      <wsdl:part element="tns:downloadConfigResponse" name="downloadConfigResponse" />
+   </wsdl:message>
+   <wsdl:message name="uploadConfigIn">
+      <wsdl:part element="tns:uploadConfig" name="parameters" />
+   </wsdl:message>
+   <wsdl:message name="uploadConfigOut">
+      <wsdl:part element="tns:uploadConfigResponse" name="uploadConfigResponse" />
+   </wsdl:message>
+   <wsdl:message name="uploadConfigZipIn">
+      <wsdl:part element="tns:uploadConfigZip" name="parameters" />
+   </wsdl:message>
+   <wsdl:message name="uploadConfigZipOut">
+      <wsdl:part element="tns:uploadConfigZipResponse" name="uploadConfigZipResponse" />
+   </wsdl:message>
+   <wsdl:message name="getPersistedConfigIn">
+      <wsdl:part element="tns:getPersistedConfig" name="parameters" />
+   </wsdl:message>
+   <wsdl:message name="getPersistedConfigOut">
+      <wsdl:part element="tns:getPersistedConfigResponse" name="getPersistedConfigResponse" />
+   </wsdl:message>
+   <wsdl:message name="setFavIn">
+      <wsdl:part element="tns:setFav" name="parameters" />
+   </wsdl:message>
+   <wsdl:message name="setFavOut">
+      <wsdl:part element="tns:setFavResponse" name="setFavResponse" />
+   </wsdl:message>
+   <wsdl:message name="getFavsIn">
+      <wsdl:part element="tns:getFavs" name="parameters" />
+   </wsdl:message>
+   <wsdl:message name="getFavsOut">
+      <wsdl:part element="tns:getFavsResponse" name="getFavsResponse" />
+   </wsdl:message>
+   <wsdl:message name="deletePersistedConfigIn">
+      <wsdl:part element="tns:deletePersistedConfig" name="parameters" />
+   </wsdl:message>
+   <wsdl:message name="deletePersistedConfigOut">
+      <wsdl:part element="tns:deletePersistedConfigResponse" name="deletePersistedConfigResponse" />
+   </wsdl:message>
+   <wsdl:message name="removeFavIn">
+      <wsdl:part element="tns:removeFav" name="parameters" />
+   </wsdl:message>
+   <wsdl:message name="removeFavOut">
+      <wsdl:part element="tns:removeFavResponse" name="removeFavResponse" />
+   </wsdl:message>
+   <wsdl:message name="updateFavIn">
+      <wsdl:part element="tns:updateFav" name="parameters" />
+   </wsdl:message>
+   <wsdl:message name="updateFavOut">
+      <wsdl:part element="tns:updateFavResponse" name="updateFavResponse" />
+   </wsdl:message>
+   <wsdl:message name="createConfigAndInitFromRefIn">
+      <wsdl:part element="tns:createConfigAndInitFromRef" name="parameters" />
+   </wsdl:message>
+   <wsdl:message name="createConfigAndInitFromRefOut">
+      <wsdl:part element="tns:createConfigAndInitFromRefResponse" name="createConfigAndInitFromRefResponse" />
+   </wsdl:message>
+   <wsdl:message name="heartbeatIn">
+      <wsdl:part element="tns:heartbeat" name="parameters" />
+   </wsdl:message>
+   <wsdl:message name="heartbeatOut">
+      <wsdl:part element="tns:heartbeatResponse" name="heartbeatResponse" />
+   </wsdl:message>
+   <wsdl:message name="setIedCsticsIn">
+      <wsdl:part element="tns:setIedCstics" name="parameters" />
+   </wsdl:message>
+   <wsdl:message name="setIedCsticsOut">
+      <wsdl:part element="tns:setIedCsticsResponse" name="setIedCsticsResponse" />
+   </wsdl:message>
+   <wsdl:portType name="BllWs">
+      <wsdl:operation name="createConfigForDu" parameterOrder="parameters">
+         <wsdl:input message="tns:createConfigForDuIn" />
+         <wsdl:output message="tns:createConfigForDuOut" />
+      </wsdl:operation>
+      <wsdl:operation name="createConfigForKB" parameterOrder="parameters">
+         <wsdl:input message="tns:createConfigForKBIn" />
+         <wsdl:output message="tns:createConfigForKBOut" />
+      </wsdl:operation>
+      <wsdl:operation name="createConfigFromRef" parameterOrder="parameters">
+         <wsdl:input message="tns:createConfigFromRefIn" />
+         <wsdl:output message="tns:createConfigFromRefOut" />
+      </wsdl:operation>
+      <wsdl:operation name="createConfigFromRefForDu" parameterOrder="parameters">
+         <wsdl:input message="tns:createConfigFromRefForDuIn" />
+         <wsdl:output message="tns:createConfigFromRefForDuOut" />
+      </wsdl:operation>
+      <wsdl:operation name="deleteConfig" parameterOrder="parameters">
+         <wsdl:input message="tns:deleteConfigIn" />
+         <wsdl:output message="tns:deleteConfigOut" />
+      </wsdl:operation>
+      <wsdl:operation name="deleteCstic" parameterOrder="parameters">
+         <wsdl:input message="tns:deleteCsticIn" />
+         <wsdl:output message="tns:deleteCsticOut" />
+      </wsdl:operation>
+      <wsdl:operation name="deleteCstics" parameterOrder="parameters">
+         <wsdl:input message="tns:deleteCsticsIn" />
+         <wsdl:output message="tns:deleteCsticsOut" />
+      </wsdl:operation>
+      <wsdl:operation name="getWSVersion" parameterOrder="parameters">
+         <wsdl:input message="tns:getWSVersionIn" />
+         <wsdl:output message="tns:getWSVersionOut" />
+      </wsdl:operation>
+      <wsdl:operation name="getConfiguration" parameterOrder="parameters">
+         <wsdl:input message="tns:getConfigurationIn" />
+         <wsdl:output message="tns:getConfigurationOut" />
+      </wsdl:operation>
+      <wsdl:operation name="getDUs" parameterOrder="parameters">
+         <wsdl:input message="tns:getDUsIn" />
+         <wsdl:output message="tns:getDUsOut" />
+      </wsdl:operation>
+      <wsdl:operation name="getGUID" parameterOrder="parameters">
+         <wsdl:input message="tns:getGUIDIn" />
+         <wsdl:output message="tns:getGUIDOut" />
+      </wsdl:operation>
+      <wsdl:operation name="getHiveXml" parameterOrder="parameters">
+         <wsdl:input message="tns:getHiveXmlIn" />
+         <wsdl:output message="tns:getHiveXmlOut" />
+      </wsdl:operation>
+      <wsdl:operation name="getHiveZip" parameterOrder="parameters">
+         <wsdl:input message="tns:getHiveZipIn" />
+         <wsdl:output message="tns:getHiveZipOut" />
+      </wsdl:operation>
+      <wsdl:operation name="getRefsByDU" parameterOrder="parameters">
+         <wsdl:input message="tns:getRefsByDUIn" />
+         <wsdl:output message="tns:getRefsByDUOut" />
+      </wsdl:operation>
+      <wsdl:operation name="resetConfig" parameterOrder="parameters">
+         <wsdl:input message="tns:resetConfigIn" />
+         <wsdl:output message="tns:resetConfigOut" />
+      </wsdl:operation>
+      <wsdl:operation name="setCstic" parameterOrder="parameters">
+         <wsdl:input message="tns:setCsticIn" />
+         <wsdl:output message="tns:setCsticOut" />
+      </wsdl:operation>
+      <wsdl:operation name="deleteCsticValue" parameterOrder="parameters">
+         <wsdl:input message="tns:deleteCsticValueIn" />
+         <wsdl:output message="tns:deleteCsticValueOut" />
+      </wsdl:operation>
+      <wsdl:operation name="setCstics" parameterOrder="parameters">
+         <wsdl:input message="tns:setCsticsIn" />
+         <wsdl:output message="tns:setCsticsOut" />
+      </wsdl:operation>
+      <wsdl:operation name="setCsticWhenPossible" parameterOrder="parameters">
+         <wsdl:input message="tns:setCsticWhenPossibleIn" />
+         <wsdl:output message="tns:setCsticWhenPossibleOut" />
+      </wsdl:operation>
+      <wsdl:operation name="setLabelCstics" parameterOrder="parameters">
+         <wsdl:input message="tns:setLabelCsticsIn" />
+         <wsdl:output message="tns:setLabelCsticsOut" />
+      </wsdl:operation>
+      <wsdl:operation name="getStatus" parameterOrder="parameters">
+         <wsdl:input message="tns:getStatusIn" />
+         <wsdl:output message="tns:getStatusOut" />
+      </wsdl:operation>
+      <wsdl:operation name="downloadPersistedConfig" parameterOrder="parameters">
+         <wsdl:input message="tns:downloadPersistedConfigIn" />
+         <wsdl:output message="tns:downloadPersistedConfigOut" />
+      </wsdl:operation>
+      <wsdl:operation name="downloadPersistedConfigZip" parameterOrder="parameters">
+         <wsdl:input message="tns:downloadPersistedConfigZipIn" />
+         <wsdl:output message="tns:downloadPersistedConfigZipOut" />
+      </wsdl:operation>
+      <wsdl:operation name="freezeConfig" parameterOrder="parameters">
+         <wsdl:input message="tns:freezeConfigIn" />
+         <wsdl:output message="tns:freezeConfigOut" />
+      </wsdl:operation>
+      <wsdl:operation name="downloadPersistedConfigService" parameterOrder="parameters">
+         <wsdl:input message="tns:downloadPersistedConfigServiceIn" />
+         <wsdl:output message="tns:downloadPersistedConfigServiceOut" />
+      </wsdl:operation>
+      <wsdl:operation name="saveConfig" parameterOrder="parameters">
+         <wsdl:input message="tns:saveConfigIn" />
+         <wsdl:output message="tns:saveConfigOut" />
+      </wsdl:operation>
+      <wsdl:operation name="downloadConfig" parameterOrder="parameters">
+         <wsdl:input message="tns:downloadConfigIn" />
+         <wsdl:output message="tns:downloadConfigOut" />
+      </wsdl:operation>
+      <wsdl:operation name="uploadConfig" parameterOrder="parameters">
+         <wsdl:input message="tns:uploadConfigIn" />
+         <wsdl:output message="tns:uploadConfigOut" />
+      </wsdl:operation>
+      <wsdl:operation name="uploadConfigZip" parameterOrder="parameters">
+         <wsdl:input message="tns:uploadConfigZipIn" />
+         <wsdl:output message="tns:uploadConfigZipOut" />
+      </wsdl:operation>
+      <wsdl:operation name="getPersistedConfig" parameterOrder="parameters">
+         <wsdl:input message="tns:getPersistedConfigIn" />
+         <wsdl:output message="tns:getPersistedConfigOut" />
+      </wsdl:operation>
+      <wsdl:operation name="setFav" parameterOrder="parameters">
+         <wsdl:input message="tns:setFavIn" />
+         <wsdl:output message="tns:setFavOut" />
+      </wsdl:operation>
+      <wsdl:operation name="getFavs" parameterOrder="parameters">
+         <wsdl:input message="tns:getFavsIn" />
+         <wsdl:output message="tns:getFavsOut" />
+      </wsdl:operation>
+      <wsdl:operation name="deletePersistedConfig" parameterOrder="parameters">
+         <wsdl:input message="tns:deletePersistedConfigIn" />
+         <wsdl:output message="tns:deletePersistedConfigOut" />
+      </wsdl:operation>
+      <wsdl:operation name="removeFav" parameterOrder="parameters">
+         <wsdl:input message="tns:removeFavIn" />
+         <wsdl:output message="tns:removeFavOut" />
+      </wsdl:operation>
+      <wsdl:operation name="updateFav" parameterOrder="parameters">
+         <wsdl:input message="tns:updateFavIn" />
+         <wsdl:output message="tns:updateFavOut" />
+      </wsdl:operation>
+      <wsdl:operation name="createConfigAndInitFromRef" parameterOrder="parameters">
+         <wsdl:input message="tns:createConfigAndInitFromRefIn" />
+         <wsdl:output message="tns:createConfigAndInitFromRefOut" />
+      </wsdl:operation>
+      <wsdl:operation name="heartbeat" parameterOrder="parameters">
+         <wsdl:input message="tns:heartbeatIn" />
+         <wsdl:output message="tns:heartbeatOut" />
+      </wsdl:operation>
+      <wsdl:operation name="setIedCstics" parameterOrder="parameters">
+         <wsdl:input message="tns:setIedCsticsIn" />
+         <wsdl:output message="tns:setIedCsticsOut" />
+      </wsdl:operation>
+   </wsdl:portType>
+   <wsdl:binding xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="BllWsBinding" type="tns:BllWs">
+      <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+      <wsdl:operation name="createConfigForDu">
+         <soap:operation soapAction="" />
+         <wsdl:input>
+            <soap:body parts="parameters" use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="createConfigForKB">
+         <soap:operation soapAction="" />
+         <wsdl:input>
+            <soap:body parts="parameters" use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="createConfigFromRef">
+         <soap:operation soapAction="" />
+         <wsdl:input>
+            <soap:body parts="parameters" use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="createConfigFromRefForDu">
+         <soap:operation soapAction="" />
+         <wsdl:input>
+            <soap:body parts="parameters" use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="deleteConfig">
+         <soap:operation soapAction="" />
+         <wsdl:input>
+            <soap:body parts="parameters" use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="deleteCstic">
+         <soap:operation soapAction="" />
+         <wsdl:input>
+            <soap:body parts="parameters" use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="deleteCstics">
+         <soap:operation soapAction="" />
+         <wsdl:input>
+            <soap:body parts="parameters" use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getWSVersion">
+         <soap:operation soapAction="" />
+         <wsdl:input>
+            <soap:body parts="parameters" use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getConfiguration">
+         <soap:operation soapAction="" />
+         <wsdl:input>
+            <soap:body parts="parameters" use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getDUs">
+         <soap:operation soapAction="" />
+         <wsdl:input>
+            <soap:body parts="parameters" use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getGUID">
+         <soap:operation soapAction="" />
+         <wsdl:input>
+            <soap:body parts="parameters" use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getHiveXml">
+         <soap:operation soapAction="" />
+         <wsdl:input>
+            <soap:body parts="parameters" use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getHiveZip">
+         <soap:operation soapAction="" />
+         <wsdl:input>
+            <soap:body parts="parameters" use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getRefsByDU">
+         <soap:operation soapAction="" />
+         <wsdl:input>
+            <soap:body parts="parameters" use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="resetConfig">
+         <soap:operation soapAction="" />
+         <wsdl:input>
+            <soap:body parts="parameters" use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="setCstic">
+         <soap:operation soapAction="" />
+         <wsdl:input>
+            <soap:body parts="parameters" use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="deleteCsticValue">
+         <soap:operation soapAction="" />
+         <wsdl:input>
+            <soap:body parts="parameters" use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="setCstics">
+         <soap:operation soapAction="" />
+         <wsdl:input>
+            <soap:body parts="parameters" use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="setCsticWhenPossible">
+         <soap:operation soapAction="" />
+         <wsdl:input>
+            <soap:body parts="parameters" use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="setLabelCstics">
+         <soap:operation soapAction="" />
+         <wsdl:input>
+            <soap:body parts="parameters" use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getStatus">
+         <soap:operation soapAction="" />
+         <wsdl:input>
+            <soap:body parts="parameters" use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="downloadPersistedConfig">
+         <soap:operation soapAction="" />
+         <wsdl:input>
+            <soap:body parts="parameters" use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="downloadPersistedConfigZip">
+         <soap:operation soapAction="" />
+         <wsdl:input>
+            <soap:body parts="parameters" use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="freezeConfig">
+         <soap:operation soapAction="" />
+         <wsdl:input>
+            <soap:body parts="parameters" use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="downloadPersistedConfigService">
+         <soap:operation soapAction="" />
+         <wsdl:input>
+            <soap:body parts="parameters" use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="saveConfig">
+         <soap:operation soapAction="" />
+         <wsdl:input>
+            <soap:body parts="parameters" use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="downloadConfig">
+         <soap:operation soapAction="" />
+         <wsdl:input>
+            <soap:body parts="parameters" use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="uploadConfig">
+         <soap:operation soapAction="" />
+         <wsdl:input>
+            <soap:body parts="parameters" use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="uploadConfigZip">
+         <soap:operation soapAction="" />
+         <wsdl:input>
+            <soap:body parts="parameters" use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getPersistedConfig">
+         <soap:operation soapAction="" />
+         <wsdl:input>
+            <soap:body parts="parameters" use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="setFav">
+         <soap:operation soapAction="" />
+         <wsdl:input>
+            <soap:body parts="parameters" use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getFavs">
+         <soap:operation soapAction="" />
+         <wsdl:input>
+            <soap:body parts="parameters" use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="deletePersistedConfig">
+         <soap:operation soapAction="" />
+         <wsdl:input>
+            <soap:body parts="parameters" use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="removeFav">
+         <soap:operation soapAction="" />
+         <wsdl:input>
+            <soap:body parts="parameters" use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="updateFav">
+         <soap:operation soapAction="" />
+         <wsdl:input>
+            <soap:body parts="parameters" use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="createConfigAndInitFromRef">
+         <soap:operation soapAction="" />
+         <wsdl:input>
+            <soap:body parts="parameters" use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="heartbeat">
+         <soap:operation soapAction="" />
+         <wsdl:input>
+            <soap:body parts="parameters" use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="setIedCstics">
+         <soap:operation soapAction="" />
+         <wsdl:input>
+            <soap:body parts="parameters" use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:service name="BllWsService">
+      <wsdl:port binding="tns:BllWsBinding" name="BllWsPort">
+         <soap:address xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" location="http://schbapxq1664.ebusiness.schneider-electric.com:53000/schneider-electric~bllws/BllWsService" />
+      </wsdl:port>
+   </wsdl:service>
+</wsdl:definitions>
