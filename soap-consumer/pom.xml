@@ -26,13 +26,18 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<version.maven.jakartaee>9.0.0</version.maven.jakartaee>
-		<version.maven.jakarta.xml.bind-api>3.0.0</version.maven.jakarta.xml.bind-api>
-		<version.maven.jakarta.ws.rs-api>3.0.0</version.maven.jakarta.ws.rs-api>
-		<version.maven.jakarta.activation.api>2.0.0</version.maven.jakarta.activation.api>
-		<version.maven.jaxb.impl>3.0.0</version.maven.jaxb.impl>
-		<version.maven.jaxb.xjc>3.0.0</version.maven.jaxb.xjc>
-		<version.maven.servlet.api>5.0.0</version.maven.servlet.api>
+		<version.maven.jakarta.xml.bind-api>4.0.0</version.maven.jakarta.xml.bind-api>
+		<version-maven-jaxb2-plugin>3.1.0</version-maven-jaxb2-plugin>
+		<version-maven-jaxws-plugin>4.0.0</version-maven-jaxws-plugin>
+
+		<output.base.dir>src/main/java/com/soap/bll</output.base.dir>
+		<wsdl.dir>src/main/resources/wsdl</wsdl.dir>
+		<xsd.dir>src/main/resources/xsd</xsd.dir>
+
+		<generate.bll.schemas.xsd.package.name>schemas</generate.bll.schemas.xsd.package.name>
+		<generate.wsdl.package.name>ws</generate.wsdl.package.name>
+
+
 	</properties>
 
 	<dependencies>
@@ -51,6 +56,19 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+
+		<!-- API, java.xml.bind module -->
+		<dependency>
+			<groupId>jakarta.xml.bind</groupId>
+			<artifactId>jakarta.xml.bind-api</artifactId>
+			<version>${version.maven.jakarta.xml.bind-api}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.xml.bind</groupId>
+			<artifactId>jaxb-impl</artifactId>
+			<version>4.0.2</version>
+			<scope>runtime</scope>
+		</dependency>
 		<!-- end::dependency[] -->
 
 		<dependency>
@@ -59,55 +77,13 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.codehaus.mojo/jaxb2-maven-plugin -->
 		<dependency>
-			<groupId>jakarta.xml.bind</groupId>
-			<artifactId>jakarta.xml.bind-api</artifactId>
-			<version>${version.maven.jakarta.xml.bind-api}</version>
+			<groupId>org.codehaus.mojo</groupId>
+			<artifactId>jaxb2-maven-plugin</artifactId>
+			<version>${version-maven-jaxb2-plugin}</version>
 		</dependency>
-
-		<dependency>
-			<groupId>jakarta.ws.rs</groupId>
-			<artifactId>jakarta.ws.rs-api</artifactId>
-			<version>${version.maven.jakarta.ws.rs-api}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>jakarta.servlet</groupId>
-			<artifactId>jakarta.servlet-api</artifactId>
-			<version>${version.maven.servlet.api}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>jakarta.platform</groupId>
-			<artifactId>jakarta.jakartaee-api</artifactId>
-			<version>${version.maven.jakartaee}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.sun.xml.bind</groupId>
-			<artifactId>jaxb-impl</artifactId>
-			<version>${version.maven.jaxb.impl}</version>
-		</dependency>
-
 	</dependencies>
-
-	<!-- tag::profile[] -->
-	<profiles>
-		<profile>
-			<id>java17</id>
-			<activation>
-				<jdk>[17,)</jdk>
-			</activation>
-
-			<dependencies>
-				<dependency>
-					<groupId>org.glassfish.jaxb</groupId>
-					<artifactId>jaxb-runtime</artifactId>
-				</dependency>
-			</dependencies>
-		</profile>
-	</profiles>
-	<!-- end::profile[] -->
 
 	<build>
 		<plugins>
@@ -121,31 +97,87 @@
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-			<!-- tag::wsdl[] -->
-			<plugin>
-				<groupId>org.jvnet.jaxb2.maven2</groupId>
-				<artifactId>maven-jaxb2-plugin</artifactId>
-				<version>0.14.0</version>
+				<groupId>com.sun.xml.ws</groupId>
+				<artifactId>jaxws-maven-plugin</artifactId>
+				<version>${version-maven-jaxws-plugin}</version>
 				<executions>
 					<execution>
+						<id>generate-bll</id>
+						<phase>process-sources</phase>
 						<goals>
-							<goal>generate</goal>
+							<goal>wsimport</goal>
 						</goals>
+						<configuration>
+							<wsdlDirectory>${project.basedir}/${wsdl.dir}</wsdlDirectory>
+							<wsdlFiles>
+								<wsdlFile>BllWsService.wsdl</wsdlFile>
+							</wsdlFiles>
+							<packageName>${generate.wsdl.package.name}.bllClasses</packageName>
+							<sourceDestDir>${output.base.dir}</sourceDestDir>
+							<clearOutputDir>true</clearOutputDir>
+						</configuration>
+					</execution>
+					<execution>
+						<id>generate-psm</id>
+						<phase>process-sources</phase>
+						<goals>
+							<goal>wsimport</goal>
+						</goals>
+						<configuration>
+							<wsdlDirectory>${project.basedir}/${wsdl.dir}</wsdlDirectory>
+							<wsdlFiles>
+								<wsdlFile>PsmConfigurationService.wsdl</wsdlFile>
+							</wsdlFiles>
+							<packageName>${generate.wsdl.package.name}.psmClasses</packageName>
+							<sourceDestDir>${output.base.dir}</sourceDestDir>
+							<clearOutputDir>true</clearOutputDir>
+						</configuration>
 					</execution>
 				</executions>
-				<configuration>
-					<schemaLanguage>WSDL</schemaLanguage>
-					<schemaDirectory>${project.basedir}/src/main/resources/xsd</schemaDirectory>
-					<schemaIncludes>
-						<include>BllWsService.wsdl</include>
-					</schemaIncludes>
-					<generatePackage>com.soap.consumer.wsdl</generatePackage>
-				</configuration>
 			</plugin>
-			<!-- end::wsdl[] -->
+
+			<!-- maven plugin to generate the JAXB annotated stub classes.-->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jaxb2-maven-plugin</artifactId>
+				<version>${version-maven-jaxb2-plugin}</version>
+				<executions>
+					<!--EXECUTION 1 for bll response-->
+					<execution>
+						<id>bll</id>
+						<goals>
+							<goal>xjc</goal>
+						</goals>
+						<configuration>
+							<target>3.0</target>
+							<packageName>${generate.bll.schemas.xsd.package.name}.response</packageName>
+							<outputDirectory>${output.base.dir}</outputDirectory>
+							<sources>
+								<source>${project.basedir}/${xsd.dir}/bll_response.xsd</source>
+							</sources>
+							<clearOutputDir>false</clearOutputDir>
+							<readOnly>true</readOnly>
+						</configuration>
+					</execution>
+					<!--EXECUTION 2 for bll error-->
+					<execution>
+						<id>bll-error</id>
+						<goals>
+							<goal>xjc</goal>
+						</goals>
+						<configuration>
+							<target>3.0</target>
+							<packageName>${generate.bll.schemas.xsd.package.name}.error</packageName>
+							<outputDirectory>${output.base.dir}</outputDirectory>
+							<sources>
+								<source>${project.basedir}/${xsd.dir}/bll_response_error.xsd</source>
+							</sources>
+							<clearOutputDir>false</clearOutputDir>
+							<readOnly>true</readOnly>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 </project>
