@@ -2,7 +2,9 @@ package com.soap.service;
 
 import com.schneider.selectconfig.business.tiers.bllConf_generated.Nodes;
 import com.schneider.selectconfig.business.tiers.ssc.*;
+import org.springframework.stereotype.Service;
 
+@Service
 public interface BLLService {
 
     Nodes createConfigFromRefForDu(CreateConfigFromRefForDu createConfigFromRefForDuRequest);

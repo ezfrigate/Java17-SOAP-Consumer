@@ -4,10 +4,7 @@ import org.apache.http.client.HttpClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.webservices.client.WebServiceTemplateBuilder;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Scope;
-import org.springframework.context.annotation.ScopedProxyMode;
+import org.springframework.context.annotation.*;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 import org.springframework.ws.client.core.WebServiceTemplate;
 import org.springframework.ws.transport.WebServiceMessageSender;
@@ -31,19 +28,17 @@ public class BLLWSTemplatesConfig {
     @Value("${bll.url.path.jt1}")
     private String jt1;
     @Autowired
-    HttpClient secureHttpClient;
+    WebServiceMessageSender webServiceMessageSender;
 
     @Bean
     Jaxb2Marshaller bllMarshaller() {
         Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
-        marshaller.setContextPath("com.soap.bll.ws.bllClasses");
+        marshaller.setContextPath("com.schneider.selectconfig.business.tiers.ssc");
         return marshaller;
     }
 
-    @Bean
-    WebServiceMessageSender webServiceMessageSender(HttpClient secureHttpClient) {
-        return new HttpComponentsMessageSender(secureHttpClient);
-    }
+    @Autowired
+    WebServiceClientInterceptor webServiceClientInterceptor;
 
     @Bean
     WebServiceTemplate genericBllWebServiceTemplate(){
@@ -51,7 +46,8 @@ public class BLLWSTemplatesConfig {
                 .setMarshaller(bllMarshaller())
                 .setUnmarshaller(bllMarshaller())
                 .setDefaultUri(jq2)
-                .messageSenders(webServiceMessageSender(secureHttpClient))
+                .messageSenders(webServiceMessageSender)
+                .interceptors(webServiceClientInterceptor)
                 .build();
     }
 
@@ -61,7 +57,8 @@ public class BLLWSTemplatesConfig {
                 .setMarshaller(bllMarshaller())
                 .setUnmarshaller(bllMarshaller())
                 .setDefaultUri(jt1)
-                .messageSenders(webServiceMessageSender(secureHttpClient))
+                .messageSenders(webServiceMessageSender)
+                .interceptors(webServiceClientInterceptor)
                 .build();
     }
 
@@ -71,7 +68,8 @@ public class BLLWSTemplatesConfig {
                 .setMarshaller(bllMarshaller())
                 .setUnmarshaller(bllMarshaller())
                 .setDefaultUri(jq1)
-                .messageSenders(webServiceMessageSender(secureHttpClient))
+                .messageSenders(webServiceMessageSender)
+                .interceptors(webServiceClientInterceptor)
                 .build();
     }
 
@@ -81,7 +79,8 @@ public class BLLWSTemplatesConfig {
                 .setMarshaller(bllMarshaller())
                 .setUnmarshaller(bllMarshaller())
                 .setDefaultUri(jq2)
-                .messageSenders(webServiceMessageSender(secureHttpClient))
+                .messageSenders(webServiceMessageSender)
+                .interceptors(webServiceClientInterceptor)
                 .build();
     }
 
@@ -91,7 +90,8 @@ public class BLLWSTemplatesConfig {
                 .setMarshaller(bllMarshaller())
                 .setUnmarshaller(bllMarshaller())
                 .setDefaultUri(jc)
-                .messageSenders(webServiceMessageSender(secureHttpClient))
+                .messageSenders(webServiceMessageSender)
+                .interceptors(webServiceClientInterceptor)
                 .build();
     }
     @Bean
@@ -100,7 +100,8 @@ public class BLLWSTemplatesConfig {
                 .setMarshaller(bllMarshaller())
                 .setUnmarshaller(bllMarshaller())
                 .setDefaultUri(jp)
-                .messageSenders(webServiceMessageSender(secureHttpClient))
+                .messageSenders(webServiceMessageSender)
+                .interceptors(webServiceClientInterceptor)
                 .build();
     }
 }

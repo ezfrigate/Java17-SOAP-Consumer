@@ -62,7 +62,7 @@ public class BLLClientConfig {
         return HttpClients.custom()
                 .setDefaultRequestConfig(config)
                 .setConnectionManager(poolingHttpClientConnectionManager)
-                //.addExecInterceptorFirst(new HttpComponentsMessageSender.RemoveSoapHeadersInterceptor())
+                .addInterceptorFirst(new HttpComponentsMessageSender.RemoveSoapHeadersInterceptor())
                 .build();
     }
 
@@ -107,7 +107,6 @@ public class BLLClientConfig {
     }
 
     @Bean
-    @Scope(value = "prototype", proxyMode = ScopedProxyMode.TARGET_CLASS)
     WebServiceMessageSender webServiceMessageSender(HttpClient secureHttpClient) {
         return new HttpComponentsMessageSender(secureHttpClient);
     }

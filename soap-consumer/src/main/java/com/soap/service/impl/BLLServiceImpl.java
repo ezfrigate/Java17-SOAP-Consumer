@@ -14,30 +14,17 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.oxm.XmlMappingException;
+import org.springframework.stereotype.Service;
 import org.springframework.ws.client.core.WebServiceTemplate;
 import org.springframework.xml.transform.StringSource;
 
 @Log4j2
+@Service
 public class BLLServiceImpl implements BLLService {
 
     private static final String CANNOT = "cannot";
     @Value("${bll.default.environment}")
     private String ssl_default;
-
-    @Autowired
-    private WebServiceTemplate jt1BllWebServiceTemplate;
-
-    @Autowired
-    private WebServiceTemplate jq1BllWebServiceTemplate;
-
-    @Autowired
-    private WebServiceTemplate jq2BllWebServiceTemplate;
-
-    @Autowired
-    private WebServiceTemplate jcBllWebServiceTemplate;
-
-    @Autowired
-    private WebServiceTemplate jpBllWebServiceTemplate;
 
     @Autowired
     private WebServiceTemplate genericBllWebServiceTemplate;
@@ -51,6 +38,7 @@ public class BLLServiceImpl implements BLLService {
             Errors errors = unmarshalError(xmlString);
             Errors.Error resp = errors.getError();
             LOG.error(resp.getValue());
+            throw new RuntimeException(resp.getValue());
         }
     }
     private <T> T callDUDelimService(Object requestObject) {

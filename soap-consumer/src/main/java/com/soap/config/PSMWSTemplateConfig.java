@@ -16,7 +16,7 @@ public class PSMWSTemplateConfig {
     @Bean
     Jaxb2Marshaller psmMarshaller() {
         Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
-        marshaller.setContextPath("com.soap.bll.ws.psmClasses");
+        marshaller.setContextPath("com.schneider.selectconfig.business.tiers.psm");
         return marshaller;
     }
 
