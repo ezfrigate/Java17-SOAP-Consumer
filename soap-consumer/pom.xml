@@ -30,12 +30,12 @@
 		<version-maven-jaxb2-plugin>3.1.0</version-maven-jaxb2-plugin>
 		<version-maven-jaxws-plugin>4.0.0</version-maven-jaxws-plugin>
 
-		<output.base.dir>src/main/java/com/soap/bll</output.base.dir>
+		<output.base.dir>src/main/java/</output.base.dir>
 		<wsdl.dir>src/main/resources/wsdl</wsdl.dir>
 		<xsd.dir>src/main/resources/xsd</xsd.dir>
 
-		<generate.bll.schemas.xsd.package.name>schemas</generate.bll.schemas.xsd.package.name>
-		<generate.wsdl.package.name>ws</generate.wsdl.package.name>
+		<generate.bll.schemas.xsd.package.name>com.schneider.selectconfig.business.tiers</generate.bll.schemas.xsd.package.name>
+		<generate.wsdl.package.name>com.schneider.selectconfig.business.tiers</generate.wsdl.package.name>
 
 
 	</properties>
@@ -59,9 +59,24 @@
 
 		<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents.client5/httpclient5 -->
 		<dependency>
-			<groupId>org.apache.httpcomponents.client5</groupId>
-			<artifactId>httpclient5</artifactId>
-			<version>5.2.1</version>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.5.14</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.20.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.26</version>
+			<scope>provided</scope>
 		</dependency>
 
 		<!-- API, java.xml.bind module -->
@@ -119,7 +134,7 @@
 							<wsdlFiles>
 								<wsdlFile>BllWsService.wsdl</wsdlFile>
 							</wsdlFiles>
-							<packageName>${generate.wsdl.package.name}.bllClasses</packageName>
+							<packageName>${generate.wsdl.package.name}.ssc</packageName>
 							<sourceDestDir>${output.base.dir}</sourceDestDir>
 							<clearOutputDir>true</clearOutputDir>
 						</configuration>
@@ -135,9 +150,8 @@
 							<wsdlFiles>
 								<wsdlFile>PsmConfigurationService.wsdl</wsdlFile>
 							</wsdlFiles>
-							<packageName>${generate.wsdl.package.name}.psmClasses</packageName>
+							<packageName>${generate.wsdl.package.name}.psm</packageName>
 							<sourceDestDir>${output.base.dir}</sourceDestDir>
-							<clearOutputDir>true</clearOutputDir>
 						</configuration>
 					</execution>
 				</executions>
@@ -157,7 +171,7 @@
 						</goals>
 						<configuration>
 							<target>3.0</target>
-							<packageName>${generate.bll.schemas.xsd.package.name}.response</packageName>
+							<packageName>${generate.bll.schemas.xsd.package.name}.bllConf_generated</packageName>
 							<outputDirectory>${output.base.dir}</outputDirectory>
 							<sources>
 								<source>${project.basedir}/${xsd.dir}/bll_response.xsd</source>
@@ -174,7 +188,7 @@
 						</goals>
 						<configuration>
 							<target>3.0</target>
-							<packageName>${generate.bll.schemas.xsd.package.name}.error</packageName>
+							<packageName>${generate.bll.schemas.xsd.package.name}.bllConf_generated.error</packageName>
 							<outputDirectory>${output.base.dir}</outputDirectory>
 							<sources>
 								<source>${project.basedir}/${xsd.dir}/bll_response_error.xsd</source>

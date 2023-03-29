@@ -33,6 +33,6 @@ build/
 .vscode/
 
 ### schema gen ###
-**/src/main/java/com/soap/bll/
+**/src/main/java/com/schneider/selectconfig/business/tiers
 **/src/main/java/META-INF/JAXB
 
